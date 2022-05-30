@@ -1,1 +1,6 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+## Suggested Rules:
+
+- We have a  ```main``` branch and we don't acp on the main branch
+- We use ```acp "message"``` to add, commit and push to the branch we checkout 
+
+
