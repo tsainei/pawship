@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_134307) do
+ActiveRecord::Schema.define(version: 2022_05_30_142443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2022_05_30_134307) do
     t.string "sex_orientation"
     t.string "training_status"
     t.string "breed"
+    t.string "address"
+    t.string "hobbies"
     t.integer "age"
     t.boolean "has_breed_certificate"
     t.bigint "user_id", null: false
