@@ -11,11 +11,11 @@
             <%# <% end %>
             <div class="card-trip-infos">
               <div>
-                <h2><%= @dogs.name %> , <%= @dogs.age %></h2>
-                <p><%= @dogs.short_description %></p>
+                <h2><%= @dog.name %> , <%= @dog.age %></h2>
+                <p><%= @dog.short_description %></p>
               </div>
             </div>
-            <%= link_to 'More info', dog_path(dog), class: "btn btn-warning mt-1"  %>
+            <%= link_to 'More info', dog_path(@dog), class: "btn btn-warning mt-1"  %>
 
               </div>
             </div>

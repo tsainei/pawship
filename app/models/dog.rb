@@ -1,7 +1,8 @@
 class Dog < ApplicationRecord
   belongs_to :user
-  has_many :swipes, inverse_of: 'swiper_dog'
-  has_many :swipers, inverse_of: 'swiped_dog'
+  has_many :swipes, class_name: 'Swipe', foreign_key: 'swiper_dog_id'
+  has_many :swipers, class_name: 'Swipe', foreign_key: 'swiped_dog_id'
+
   validates :short_description, presence: true, length: { maximum: 50 }
   validates :name,
             :age,
