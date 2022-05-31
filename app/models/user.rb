@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :dogs
+  has_many :swiped_dog_ids, through: :dogs, source: :swiped_dog_ids
+  has_many :swiper_dog_ids, through: :dogs, source: :swiper_dog_ids
 end
