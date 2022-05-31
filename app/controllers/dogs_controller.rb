@@ -3,12 +3,14 @@ class DogsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    # @dog =
-    #   Dog
-    #     .where.not(id: current_user.swipes.select('dog_id'))
-    #     .order('RANDOM()')
-    #     .first
-    @dogs = Dog.all
+    dogs = Dog.order('RANDOM()')
+    if current_user&.dog
+      dogs =
+        dogs
+          .where.not(id: current_user.dog.swipes.select('swiped_dog_id'))
+          .where.not(id: current_user.dog.id)
+    end
+    @dog = dogs.first
   end
 
   def new
@@ -32,9 +34,11 @@ class DogsController < ApplicationController
   end
 
   def update
-    @dog.update(dog_params)
-
-    redirect_to dogs_path
+    if @dog.update(dog_params)
+      redirect_to dogs_path
+    else
+      render :edit
+    end
   end
 
   def show; end
@@ -55,7 +59,7 @@ class DogsController < ApplicationController
         :has_breed_certificate,
         :hobbies,
         :address,
-        :short_description
+        :short_description,
       )
   end
 
