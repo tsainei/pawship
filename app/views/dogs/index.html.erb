@@ -3,11 +3,10 @@
   <div class="row">
     <div class= "col">
       <div class="row">
-
         <div class="col">
           <div class="card-trip mt-4 p-3" style="width: 18rem;">
             <%# <% if dog.photo.present? %>
-              <%# <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
+            <%# <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
             <%# <% end %>
             <div class="card-trip-infos">
               <div>
@@ -16,12 +15,13 @@
               </div>
             </div>
             <%= link_to 'More info', dog_path(@dog), class: "btn btn-warning mt-1"  %>
-
-              </div>
-            </div>
-
-
+            <%= link_to 'No!', swipes_path, class: "btn btn-warning mt-1"  %>
+            <%= link_to 'Yes', swipes_path, class: "btn btn-warning mt-1"  %>
+          </div>
+        </div>
       </div>
     </div>
-  </div> <%# row %>
-</div> <%#  container %>
+  </div>
+ <%# row %>
+</div>
+ <%#  container %>

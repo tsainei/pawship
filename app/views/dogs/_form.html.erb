@@ -1,19 +1,16 @@
-<%#  %>
 
 <%= simple_form_for(@dog) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :name %>
   <%= f.input :age, collection: 1..18 %>
-  <%= f.input :gender, collection: ["male", "female"]  %>
+  <%= f.input :gender, collection: ["male", "female", 'other']  %>
   <%= f.input :sex_orientation, collection: ['heterosexual','bisexual','homosexual'] %>
   <%= f.input :short_description %>
   <%= f.input :hobbies %>
   <%= f.input :personality %>
-  <%= f.input :training_status %>
-  <%# training status should be select, too %>
-  <%= f.input :has_breed_certificate %>
-  <%# it should be yes or no  f.collection_check_boxes :options, [[true, 'Yes'], [false, 'No']], :first, :last %>
+  <%= f.input :training_status, collection: ['trained', 'not trained', 'in training'] %>
+  <%= f.input :has_breed_certificate, collection: [[true, 'yes'], [false,'no']]  %>
   <%= f.input :breed, collection: BREEDS %>
   <%= f.input :address %>
   <%= f.input :photo, as: :file %>
