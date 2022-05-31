@@ -1,4 +1,4 @@
-DOG_BREED_LIST=  [
+<%# DOG_BREED_LIST = [
       "Affenpinscher",
       "Afghan Hound",
       "Aidi",
@@ -452,15 +452,15 @@ DOG_BREED_LIST=  [
       "Wirehaired Pointing Griffon",
       "Wirehaired Vizsla",
       "Yorkshire Terrier",
-      "Šarplaninac"
-    ]
+      "Šarplaninac"] %>
+
 <%= simple_form_for(@dog) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.select (:gender, ['male', 'female'], {include_blank: "Select something"}) %>
-  <%= f.select (:sex_orientation, ['heterosexual','bisexual','homosexual'], {include_blank: "Select something"}) %>
+  <%= f.input :age, :collection => 1..18 %>
+  <%= f.select :gender, ["male", "female"], ({include_blank: "Select something"}) %>
+  <%= f.select :sex_orientation, ['heterosexual','bisexual','homosexual'], ({include_blank: "Select something"}) %>
   <%= f.input :short_description %>
   <%= f.input :hobbies %>
   <%= f.input :personality %>
@@ -468,7 +468,7 @@ DOG_BREED_LIST=  [
   <%# training status should be select, too %>
   <%= f.input :has_breed_certificate %>
   <%# it should be yes or no  f.collection_check_boxes :options, [[true, 'Yes'], [false, 'No']], :first, :last %>
-  <%= f.select (:breed, DOG_BREED_LIST, {include_blank: 'Choose Your Dog Breed'}) %>
+  <%= f.select :breed, ["Yorkshire Terrier", "Tosa", "Talbot"], ({include_blank: 'Choose Your Dog Breed'}) %>
   <%= f.input :address %>
   <%= f.input :photo, as: :file %>
   <%= f.submit class: 'btn btn-warning' %>

@@ -5,7 +5,7 @@
 </div>
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= image_path("banner_img.jpg") %>)">
+<div class="banner img-fluid" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= image_path("banner_img.jpg") %>)">
   <div class="container">
     <h1>This is where your doggie finds friendship and love</h1>
     <p>Looking for doggo playdates in Zurich?</p>
@@ -16,5 +16,5 @@
 <div class="container">
   <%= link_to "Login", new_user_session_path, class: "btn btn-warning mt-3" %>
   <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-warning mt-3' %>
-  <%= link_to "Browse", dogs_path,  class: 'btn btn-warning mt-3' %>
+  <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3' %>
 </div>
