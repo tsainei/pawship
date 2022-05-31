@@ -27,7 +27,9 @@ class DogsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @dog.user = current_user
+  end
 
   def update
     @dog.update(dog_params)
