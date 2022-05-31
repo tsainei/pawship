@@ -1,13 +1,15 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: %i[show edit update destroy]
+  before_action :set_dog, only: %i[show edit update]
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @dog =
-      Dog
-        .where.not(id: current_user.dog.swipes.select('dog_id'))
-        .order('RANDOM()')
-        .first
+    # @dog =
+    #   Dog
+    #     .where.not(id: current_user.swipes.select('dog_id'))
+    #     .order('RANDOM()')
+    #     .first
+     @dogs = Dog.all
+
   end
 
   def new
@@ -19,16 +21,21 @@ class DogsController < ApplicationController
     @dog.user = current_user
 
     if @dog.save
-      redirect_to dogs_path,
-                  notice: 'Your dog profile was successfully created.'
+      redirect_to dogs_path, notice: 'Your dog profile was successfully created.'
     else
       render :new
     end
   end
 
-  def update; end
+  def edit
+  end
 
-  def edit; end
+  def update
+    @dog.update(dog_params)
+
+    redirect_to dogs_path
+  end
+
 
   def show; end
 
