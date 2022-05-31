@@ -465,7 +465,9 @@ DOG_BREED_LIST=  [
   <%= f.input :hobbies %>
   <%= f.input :personality %>
   <%= f.input :training_status %>
+  <%# training status should be select, too %>
   <%= f.input :has_breed_certificate %>
+  <%# it should be yes or no  f.collection_check_boxes :options, [[true, 'Yes'], [false, 'No']], :first, :last %>
   <%= f.select (:breed, DOG_BREED_LIST, {include_blank: 'Choose Your Dog Breed'}) %>
   <%= f.input :address %>
   <%= f.input :photo, as: :file %>
