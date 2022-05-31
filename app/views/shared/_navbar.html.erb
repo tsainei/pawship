@@ -21,6 +21,7 @@
             <%= image_tag "https://www.pngkit.com/png/full/27-275835_heart-paw-print-png-www-heart-transplant-clip.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Create dog profile", new_dog_path, class: "dropdown-item" %>
+              <%= link_to "Edit dog profile", edit_dog_path(current_user.dog), class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
