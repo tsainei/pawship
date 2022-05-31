@@ -3,7 +3,7 @@ class DogsController < ApplicationController
   def index
     @dog =
       Dog
-        .where.not(id: current_user.swipes.select('dog_id'))
+        .where.not(id: current_user.dog.swipes.select('dog_id'))
         .order('RANDOM()')
         .first
   end
