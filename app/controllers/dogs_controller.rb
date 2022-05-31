@@ -8,8 +8,7 @@ class DogsController < ApplicationController
     #     .where.not(id: current_user.swipes.select('dog_id'))
     #     .order('RANDOM()')
     #     .first
-     @dogs = Dog.all
-
+    @dogs = Dog.all
   end
 
   def new
@@ -21,14 +20,14 @@ class DogsController < ApplicationController
     @dog.user = current_user
 
     if @dog.save
-      redirect_to dogs_path, notice: 'Your dog profile was successfully created.'
+      redirect_to dogs_path,
+                  notice: 'Your dog profile was successfully created.'
     else
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @dog.update(dog_params)
@@ -36,14 +35,26 @@ class DogsController < ApplicationController
     redirect_to dogs_path
   end
 
-
-  def show
-  end
+  def show; end
 
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :age, :gender, :personality, :sex_orientation, :training_status, :breed, :has_breed_certificate, :hobbies, :address, :short_description)
+    params
+      .require(:dog)
+      .permit(
+        :name,
+        :age,
+        :gender,
+        :personality,
+        :sex_orientation,
+        :training_status,
+        :breed,
+        :has_breed_certificate,
+        :hobbies,
+        :address,
+        :short_description
+      )
   end
 
   def set_dog

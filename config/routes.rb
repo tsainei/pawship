@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'swipes/new'
+  get 'swipes/create'
+  get 'swipes/index'
+  get 'swipes/show'
   devise_for :users
   root to: 'pages#home'
   resources :dogs
