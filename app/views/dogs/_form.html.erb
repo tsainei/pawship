@@ -1,0 +1,17 @@
+<%= simple_form_for(@dog) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :gender %>
+  <%= f.input :sex_orientation %>
+  <%= f.input :short_description %>
+  <%= f.input :hobbies %>
+  <%= f.input :personality %>
+  <%= f.input :training_status %>
+  <%= f.input :has_breed_certificate %>
+  <%= f.input :breed %>
+  <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit class: 'btn btn-warning' %>
+<% end %>
