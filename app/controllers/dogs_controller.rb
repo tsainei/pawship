@@ -9,6 +9,7 @@ class DogsController < ApplicationController
     #     .order('RANDOM()')
     #     .first
      @dogs = Dog.all
+
   end
 
   def new
