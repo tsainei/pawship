@@ -8,11 +8,11 @@ class SwipesController < ApplicationController
     swipe.liked = params[:liked]
     swipe.save!
     if swipe.liked &&
-         swipe
-           .swiped_dog
-           .swipes
-           .where(liked: true, swiped_dog_id: current_user.dog.id)
-           .any?
+      swipe
+        .swiped_dog
+        .swipes
+        .where(liked: true, swiped_dog_id: current_user.dog.id)
+        .any?
       redirect_to swipes_path, notice: "It's a match"
     else
       redirect_to dogs_path
@@ -20,11 +20,11 @@ class SwipesController < ApplicationController
   end
 
   def index
-    @swipes =
-      current_user.swipe.swiped_dog.swipes.where(
-        liked: true,
-        swiped_dog_id: current_user.dog.id,
-      )
+    # @swipes =
+    #   current_user.swipe.swiped_dog.swipes.where(
+    #     liked: true,
+    #     swiped_dog_id: current_user.dog.id,
+    #   )
   end
 
   def show

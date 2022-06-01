@@ -17,6 +17,8 @@
               <% if current_user.dog %>
                 <%= link_to "Edit dog profile", edit_dog_path(current_user.dog), class: "dropdown-item" %>
                 <%= link_to "View my dog profile", dog_path(current_user.dog), class: "dropdown-item" %>
+                <%= link_to "View all likes", swipes_path, class: "dropdown-item" %>
+
               <% else %>
                 <%= link_to "Create dog profile", new_dog_path, class: "dropdown-item" %>
               <% end %>

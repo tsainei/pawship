@@ -4,7 +4,7 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :name %>
 
-   <%= f.input :age, as: :date, html5: true %>
+   <%= f.input :birthday, as: :date, html5: true %>
   <%= f.input :gender, collection: ["male", "female", 'other']  %>
   <%= f.input :sex_orientation, collection: ['heterosexual','bisexual','homosexual'] %>
   <%= f.input :short_description, placeholder: 'ex. I am an excellent digger!(min: 50 characters)' %>
