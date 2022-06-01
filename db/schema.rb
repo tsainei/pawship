@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(version: 2022_06_01_114937) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "short_description"
+    t.date "birthday"
     t.float "latitude"
     t.float "longitude"
-    t.date "birthday"
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
