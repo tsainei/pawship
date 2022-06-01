@@ -13,7 +13,7 @@ class SwipesController < ApplicationController
            .swipes
            .where(liked: true, swiped_dog_id: current_user.dog.id)
            .any?
-      redirect_to dogs_path, notice: "It's a match"
+      redirect_to swipes_path, notice: "It's a match"
     else
       redirect_to dogs_path
     end
@@ -21,11 +21,13 @@ class SwipesController < ApplicationController
 
   def index
     @swipes =
-      swipe.swiped_dog.swipes.where(
+      current_user.swipe.swiped_dog.swipes.where(
         liked: true,
         swiped_dog_id: current_user.dog.id,
       )
   end
 
-  def show; end
+  def show
+    @swipe = Swipe.find(params[:id])
+  end
 end
