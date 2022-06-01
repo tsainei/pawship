@@ -21,8 +21,9 @@ class Dog < ApplicationRecord
 
   def dates_valid?
     return if birthday.blank? || birthday.future?
-    if birthday > Time.current.beginning_of_day
-      return errors.add(:birthday, 'must be in the future')
-    end
+    errors.add(:birthday, 'must be in the past')
   end
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

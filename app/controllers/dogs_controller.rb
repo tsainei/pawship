@@ -41,7 +41,21 @@ class DogsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @markers =
+    [{
+      lat: @dog.latitude,
+      lng: @dog.longitude,
+      info_window:
+        render_to_string(
+          partial: 'info_window',
+          locals: {
+          dog: @dog,
+          },
+       ),
+      image_url: helpers.asset_url('item_map.png'),
+    }]
+  end
 
   private
 
