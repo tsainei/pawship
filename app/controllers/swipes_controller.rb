@@ -27,5 +27,7 @@ class SwipesController < ApplicationController
       )
   end
 
-  def show; end
+  def show
+  @swipe.present?
+ end
 end
