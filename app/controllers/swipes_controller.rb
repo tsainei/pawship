@@ -28,6 +28,6 @@ class SwipesController < ApplicationController
   end
 
   def show
-  @swipe.present?
- end
+    @swipe = Swipe.find(params[:id])
+  end
 end
