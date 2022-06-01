@@ -15,7 +15,15 @@ class Dog < ApplicationRecord
             :has_breed_certificate,
             :hobbies,
             :address,
+            :photo,
             presence: true
+  validate :dates_valid?
+
+  def dates_valid?
+    return if birthday.blank? || birthday.future?
+    errors.add(:birthday, 'must be in the past')
+  end
+
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 end

@@ -1,9 +1,7 @@
-
 <%= simple_form_for(@dog) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :name %>
-
    <%= f.input :birthday, as: :date, html5: true %>
   <%= f.input :gender, collection: ["male", "female", 'other']  %>
   <%= f.input :sex_orientation, collection: ['heterosexual','bisexual','homosexual'] %>
