@@ -1,27 +1,30 @@
 <div class="container m-3 mx-auto">
-  <h1 class="text-center">Doggie 1</h1>
   <div class="row">
     <div class= "col">
       <div class="row">
-
         <div class="col">
           <div class="card-trip mt-4 p-3" style="width: 18rem;">
             <%# <% if dog.photo.present? %>
-              <%# <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
+            <%# <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
             <%# <% end %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= @dog.name %> , <%= @dog.age %></h2>
-                <p><%= @dog.short_description %></p>
+            <% if !@dog   %>
+              <p>there's no dogs!</p>
+            <% else %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= @dog.name %> , <%= @dog.age %></h2>
+                  <p><%= @dog.short_description %></p>
+                </div>
               </div>
-            </div>
-            <%= link_to 'More info', dog_path(@dog), class: "btn btn-warning mt-1"  %>
-
-              </div>
-            </div>
-
-
+              <%= link_to 'More info', dog_path(@dog), class: "btn btn-warning mt-1"  %>
+              <%= link_to 'No!', swipes_path(swiped_dog_id: @dog.id,liked: false), class: "btn btn-warning mt-1", data: {turbo_method:'post' }  %>
+              <%= link_to 'Yes', swipes_path(swiped_dog_id: @dog.id,liked: true), class: "btn btn-warning mt-1", data: {turbo_method:'post' }  %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div> <%# row %>
-</div> <%#  container %>
+  </div>
+  <%# row %>
+</div>
+<%#  container %>
