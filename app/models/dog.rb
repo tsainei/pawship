@@ -6,7 +6,7 @@ class Dog < ApplicationRecord
 
   validates :short_description, presence: true, length: { maximum: 50 }
   validates :name,
-            :age,
+            :birthday,
             :personality,
             :gender,
             :sex_orientation,
@@ -16,4 +16,6 @@ class Dog < ApplicationRecord
             :hobbies,
             :address,
             presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
