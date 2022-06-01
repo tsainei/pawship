@@ -1,14 +1,12 @@
 
 
-
-            <% if current_user.dog.photo.present? %>
-              <%= cl_image_tag(current_user.dog.photo.key, width: 400, height: 300, crop: :fit) %>
-            <% end %>
+         <div class="card-trip-infos">
             <% if @dog.present? ==false   %>
               <p>there's no dogs!</p>
             <% else %>
               <div class="card-trip-infos">
                 <div>
+                <%= cl_image_tag(@dog.photo.key, width: 400, height: 300, crop: :fit) %>
                   <h2><%= @dog.name %> , <%= @dog.birthday %></h2>
                   <p><%= @dog.short_description %></p>
                 </div>
@@ -20,8 +18,8 @@
              <% else %>
               <%= link_to 'Create Dog profile', new_dog_path, class: "btn btn-warning mt-1" %>
                   <%= link_to 'See Another Dog!', dogs_path, class: "btn btn-warning mt-1" %>
-              <% end %>
-            <% end %>
+
+          <% end %>
           </div>
         </div>
 
