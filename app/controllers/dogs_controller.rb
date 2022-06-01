@@ -74,6 +74,7 @@ class DogsController < ApplicationController
         :hobbies,
         :address,
         :short_description,
+        :photo
       )
   end
 
