@@ -2,14 +2,14 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :name %>
-   <%= f.input :birthday, as: :date, html5: true %>
+   <%= f.input :age, colleaction: ['1m','2m','3m','4m','5m','6m','7m','8m','9m','10m','11m','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'] %>
   <%= f.input :gender, collection: ["male", "female", 'other']  %>
   <%= f.input :sex_orientation, collection: ['heterosexual','bisexual','homosexual'] %>
   <%= f.input :short_description, placeholder: 'ex. I am an excellent digger!(min: 50 characters)' %>
   <%= f.input :hobbies %>
   <%= f.input :personality %>
   <%= f.input :training_status, collection: ['trained', 'not trained', 'in training'] %>
-  <%= f.input :has_breed_certificate, collection: [[true, 'yes'], [false,'no']]  %>
+  <%= f.input :has_breed_certificate, collection: [true, false]  %>
   <%= f.input :breed, collection: BREEDS %>
   <%= f.input :address %>
   <%= f.input :photo, as: :file %>

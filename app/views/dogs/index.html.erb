@@ -4,7 +4,7 @@
   <% else %>
     <div class="card-trip-infos">
       <%= cl_image_tag(@dog.photo.key, width: 400, height: 300, crop: :fit) %>
-      <h2><%= @dog.name %> , <%= @dog.birthday %></h2>
+      <h2><%= @dog.name %> , <%= @dog.age %></h2>
       <p><%= @dog.short_description %></p>
     </div>
     <% end %>
