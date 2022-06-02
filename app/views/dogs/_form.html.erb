@@ -1,4 +1,4 @@
-<%= simple_form_for(@dog) do |f| %>
+<%= simple_form_for(@dog, data: { turbo: false }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :name %>
