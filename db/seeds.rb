@@ -9,7 +9,7 @@
 require 'faker'
 require 'open-uri'
 
-addresses = ["Fortunagasse 28, Zurich", "Langmauerstrasse 30, Zurich", "Bahnofstrasse 20, Zurich", "Rennweg 57, Zurich"]
+addresses = ["Fortunagasse 28, Zurich", "Langmauerstrasse 30, Zurich", "Bahnhofstrasse 20, Zurich", "Rennweg 57, Zurich"]
 
 10.times do |cpt|
   user = User.create(
