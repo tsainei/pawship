@@ -1,2 +1,11 @@
-<h1>Swipes#show</h1>
-<p>Find me in app/views/swipes/show.html.erb</p>
+<h1>This is a match</h1>
+ <%= cl_image_tag(@swiper_dog.photo.key, width: 400, height: 300, crop: :fit) %>
+<h2><%= @swiper_dog.name %></h2>
+<p><%= @swiper_dog.age %></p>
+ <%= cl_image_tag(@swiped_dog.photo.key, width: 400, height: 300, crop: :fit) %>
+<h2>  <%= @swiped_dog.name %> </h2>
+<p><%= @swiped_dog.age %></p>
+<p><%= @swiped_dog.user.email %></p>
+
+<%= link_to "know more about #{@swiped_dog.name}", dogs_path, class: "btn btn-warning mt-1" %>
+<%= link_to 'Find More Playdates', dogs_path, class: "btn btn-warning mt-1" %>
