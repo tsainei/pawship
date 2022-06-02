@@ -14,7 +14,7 @@
 
 <div class="container">
   <% if user_signed_in? == false %>
-    <%= link_to "Login", new_user_session_path, class: "btn btn-warning mt-3" %>
+    <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-warning mt-3' %>
     <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3' %>
   <%else%>
     <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3' %>
