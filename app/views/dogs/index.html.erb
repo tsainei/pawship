@@ -1,22 +1,25 @@
-<% if @dog.present? == false %>
-  <p>there's no dogs!</p>
-<% else %>
-  <div class="card-trip-infos">
-    <%= cl_image_tag(@dog.photo.key, width: 400, height: 300, crop: :fit) %>
-    <h2><%= @dog.name %> , <%= @dog.age %></h2>
-    <p><%= @dog.short_description %></p>
-  </div>
-  <% if user_signed_in? == false %>
-    <%= link_to 'More info', new_user_registration_path, class: "btn btn-warning mt-1"  %>
-    <%= link_to 'No', dogs_path, class: "btn btn-warning mt-1" %>
-    <%= link_to "Yes", new_user_registration_path, class: 'btn btn-warning mt-3' %>
-  <% elsif current_user.dog.present?   %>
-    <%= link_to 'More info', dog_path(@dog), class: "btn btn-warning mt-1"  %>
-    <%= link_to 'No!', swipes_path(swiped_dog_id: @dog.id, liked: false), class: "btn btn-warning mt-1", data: {turbo_method:'post' }  %>
-    <%= link_to 'Yes', swipes_path(swiped_dog_id: @dog.id, liked: true), class: "btn btn-warning mt-1", data: {turbo_method:'post' }  %>
-  <% else %>
-    <%= link_to 'More info', dog_path(@dog), class: "btn btn-warning mt-1"  %>
-    <%= link_to 'Create Dog profile', new_dog_path, class: "btn btn-warning mt-1" %>
-    <%= link_to 'See Another Dog!', dogs_path, class: "btn btn-warning mt-1" %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <% if @dog.present? == false %>
+      <p>there's no dogs!</p>
+    <% else %>
+      <%= cl_image_tag(@dog.photo.key, class:"card-img-top") %>
+      <h5 class="card-title"><%= @dog.name %></h5>
+      <p>  <strong>  <%= @dog.age %></strong></p>
+      <p class="card-text"><%= @dog.short_description %></p>
+    </div>
+    <% if user_signed_in? == false %>
+      <%= link_to 'More info', new_user_registration_path, class: "btn btn-warning mt-1"  %>
+      <%= link_to 'No', dogs_path, class: "btn btn-warning mt-1" %>
+      <%= link_to "Yes", new_user_registration_path, class: 'btn btn-warning mt-3' %>
+    <% elsif current_user.dog.present?   %>
+      <%= link_to 'More info', dog_path(@dog), class: "btn btn-warning mt-1"  %>
+      <%= link_to 'No!', swipes_path(swiped_dog_id: @dog.id, liked: false), class: "btn btn-warning mt-1", data: {turbo_method:'post' }  %>
+      <%= link_to 'Yes', swipes_path(swiped_dog_id: @dog.id, liked: true), class: "btn btn-warning mt-1", data: {turbo_method:'post' }  %>
+    <% else %>
+      <%= link_to 'More info', dog_path(@dog), class: "btn btn-warning mt-1"  %>
+      <%= link_to 'Create Dog profile', new_dog_path, class: "btn btn-warning mt-1" %>
+      <%= link_to 'See Another Dog!', dogs_path, class: "btn btn-warning mt-1" %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
