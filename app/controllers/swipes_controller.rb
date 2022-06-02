@@ -29,5 +29,7 @@ class SwipesController < ApplicationController
 
   def show
     @swipe = Swipe.find(params[:id])
+    @swiped_dog = Dog.find(@swipe.swiped_dog_id)
+    @swiper_dog = Dog.find(@swipe.swiper_dog_id)
   end
 end
