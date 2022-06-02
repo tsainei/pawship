@@ -13,7 +13,7 @@ class SwipesController < ApplicationController
            .swipes.likes
            .where(swiped_dog_id: current_user.dog.id)
            .any?
-      redirect_to swipes_path, notice: "It's a match"
+      redirect_to swipes_path(), notice: "It's a match"
     else
       redirect_to dogs_path
     end
