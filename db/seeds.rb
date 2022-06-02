@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'open-uri'
 
-10.times do
+10.times do |cpt|
   user = User.create(
   email: Faker::Internet.email,
   password: "123456",
@@ -22,13 +23,15 @@ require 'faker'
     sex_orientation: "hecterosexual",
     training_status: "trained",
     breed: Faker::Creature::Dog.breed,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    address: "18 Köchlistrasse ,8004 Zürich",
     hobbies: Faker::Lorem.sentence,
-    age: 1,
+    age: rand(15),
     has_breed_certificate: true,
     user: user,
     short_description: Faker::Lorem.paragraph(sentence_count: 2),
   )
-  dog.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/Sherlock.jpg')), filename: 'Sherlock.jpg')
+  downloaded_image = URI.parse("https://placedog.net/#{290+cpt}/400").open
+
+  dog.photo.attach(io: downloaded_image, filename: 'Sherlock.jpg')
   dog.save
 end
