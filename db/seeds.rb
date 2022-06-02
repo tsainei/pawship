@@ -22,7 +22,7 @@ addresses = ["Fortunagasse 28, Zurich", "Langmauerstrasse 30, Zurich", "Bahnofst
     name: Faker::Creature::Dog.name,
     personality: Faker::Lorem.paragraph(sentence_count: 2),
     gender: "male",
-    sex_orientation: "hecterosexual",
+    sex_orientation: "heterosexual",
     training_status: "trained",
     breed: Faker::Creature::Dog.breed,
     address: addresses.sample,
