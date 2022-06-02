@@ -9,6 +9,8 @@
 require 'faker'
 require 'open-uri'
 
+addresses = ["Fortunagasse 28, Zurich", "Langmauerstrasse 30, Zurich", "Bahnofstrasse 20, Zurich", "Rennweg 57, Zurich"]
+
 10.times do |cpt|
   user = User.create(
   email: Faker::Internet.email,
@@ -23,7 +25,7 @@ require 'open-uri'
     sex_orientation: "hecterosexual",
     training_status: "trained",
     breed: Faker::Creature::Dog.breed,
-    address: "18 Köchlistrasse ,8004 Zürich",
+    address: addresses.sample,
     hobbies: Faker::Lorem.sentence,
     age: rand(15),
     has_breed_certificate: true,
