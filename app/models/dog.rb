@@ -6,7 +6,7 @@ class Dog < ApplicationRecord
 
   validates :short_description, presence: true, length: { maximum: 50 }
   validates :name,
-            :birthday,
+            :age,
             :personality,
             :gender,
             :sex_orientation,
@@ -17,12 +17,6 @@ class Dog < ApplicationRecord
             :address,
             :photo,
             presence: true
-  validate :dates_valid?
-
-  def dates_valid?
-    return if birthday.blank? || birthday.future?
-    errors.add(:birthday, 'must be in the past')
-  end
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
