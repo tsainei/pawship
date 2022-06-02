@@ -64,7 +64,7 @@ class DogsController < ApplicationController
       .require(:dog)
       .permit(
         :name,
-        :birthday,
+        :age,
         :gender,
         :personality,
         :sex_orientation,
