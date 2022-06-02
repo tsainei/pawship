@@ -13,7 +13,7 @@ class SwipesController < ApplicationController
            .swipes.likes
            .where(swiped_dog_id: current_user.dog.id)
            .any?
-      redirect_to swipe
+           redirect_to swipes_path(swipe.swiped_dog_id)
     else
       redirect_to dogs_path
     end
@@ -25,6 +25,7 @@ class SwipesController < ApplicationController
         liked: true,
         swiped_dog_id: current_user.dog.swipers.likes.select('swiper_dog_id'),
       )
+      @dogs = Dog.where(id: @swipes.map(&:swiped_dog_id))
   end
 
   def show
