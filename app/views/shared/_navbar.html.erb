@@ -14,7 +14,7 @@
             <%= image_tag "https://img.freepik.com/free-vector/red-love-paw-print-logo-flat-design-vector-illustration-isolated-white-background_20412-988.jpg?w=2000", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <% if current_user.dog %>
+              <% if current_user.dog.present? %>
                 <%= link_to "Edit dog profile", edit_dog_path(current_user.dog), class: "dropdown-item" %>
                 <%= link_to "View my dog profile", dog_path(current_user.dog), class: "dropdown-item" %>
                 <%= link_to "View all matches", swipes_path, class: "dropdown-item" %>
