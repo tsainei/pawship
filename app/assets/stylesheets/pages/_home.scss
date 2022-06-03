@@ -1,5 +1,9 @@
 body, html {
   height: 100%;
+  background-color: white;
+  background-image: url('backgroundimg.jpg'),;
+  background-size: 250%;
+
 }
 
 .bg {
@@ -18,4 +22,16 @@ body, html {
 h1, h3, p {
   font-family: 'Redressed', cursive;
   color: black;
+}
+
+.btn-primary {
+  color: #212529;
+  background-color: #7cc;
+  border-color: #5bc2c2
+}
+
+.btn-primary:hover {
+  color: #212529;
+  background-color: #52bebe;
+  border-color: #8ad3d3
 }
