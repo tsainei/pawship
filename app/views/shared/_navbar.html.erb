@@ -1,7 +1,9 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+<%# <div class="navbar fixed-top navbar-expand-md navbar-light bg-light"> %>
+<div class="navbar navbar-expand-md navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%#= image_tag "https://www.zigzagadvertising.co.uk/wp-content/uploads/2018/06/paws_logo_paw_a.jpg" %>
+
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,6 +16,7 @@
             <%= image_tag "paw-navbar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+             <%= link_to "Browse", dogs_path, class: "dropdown-item" %>
               <% if current_user.dog.present? %>
                 <%= link_to "Edit dog profile", edit_dog_path(current_user.dog), class: "dropdown-item" %>
                 <%= link_to "View my dog profile", dog_path(current_user.dog), class: "dropdown-item" %>

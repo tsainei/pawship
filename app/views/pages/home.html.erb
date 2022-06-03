@@ -20,9 +20,9 @@
     <%# <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3' %>
   <%# <% end %>
 <%# </div> %>
+<div class="row justify-content-center">
 
-
-    <div class="bg">
+    <div class="bg col-12 col-lg-6">
       <div class="container">
       <div class="mb-4 align-items-center justify-content-center">
 
@@ -55,13 +55,15 @@
       <div class="container">
         <div class="col-md-12 text-center">
            <% if user_signed_in? == false %>
-             <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary mt-3' %>
-             <%= link_to "Browse", dogs_path, class: 'btn btn-primary mt-3' %>
+             <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary mt-3 mb-3' %>
+             <%= link_to "Browse", dogs_path, class: 'btn btn-primary mt-3 mb-3' %>
            <%else%>
-             <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3' %>
+             <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3 mb-3' %>
            <% end %>
         </div>
     </div>
 
     </div>
   </div>
+</div>
+</div>

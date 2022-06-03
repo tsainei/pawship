@@ -13,14 +13,19 @@
 @import "pages/index";
 @import "mapbox-gl/dist/mapbox-gl";
 
+
 .container {
   align-content: center;
   margin: auto;
 }
-
 .card {
   box-shadow: 10px;
   margin: auto;
   padding: 20px;
   border-radius: 20px;
+}
+body {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
 }
