@@ -25,9 +25,37 @@
   </div>
     <div class="bg">
       <div class="container">
-      <h1 class="text-center"><strong>PAWSHIP</strong></h1>
-      <h3 class="text-center">This is where your doggie finds friendship and love</h3>
-      <p>Looking for doggo playdates in Zurich?</p>
-      <p>Look no further, Find the perfect playdate here! Lots of cute tails are wagging.</p>
+      <div class="mb-4 align-items-center justify-content-center mt-4">
+      <h1 class="font-weight-bold text-center mb-5" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><strong>PAWSHIP</strong></h1>
+      <h3 class="font-weight-bold text-center mb-5" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">This is where your doggie finds friendship and love</h3>
+      <p class="font-weight-bold text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Looking for doggo playdates in Zurich?</p>
+      <p class="font-weight-bold text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Look no further, Find the perfect playdate here! Lots of cute tails are wagging.</p>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <% if user_signed_in? == false %>
+        <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary mt-3' %>
+        <%= link_to "Browse", dogs_path, class: 'btn btn-primary mt-3' %>
+      <%else%>
+        <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3' %>
+      <% end %>
     </div>
   </div>
