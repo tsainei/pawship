@@ -1,0 +1,19 @@
+<div class="tinder">
+  <div class="tinder--status">
+    <i class="fa fa-remove"></i>
+    <i class="fa-solid fa-paw"></i>
+  </div>
+  <div class="tinder--cards">
+    <div class="tinder--card">
+      <% if @dogs.present? == false %>
+        <p>there's no dogs!</p>
+      <% else %>
+        <% @dogs.each do |dog| %>
+          <%= cl_image_tag(dog.photo.key, class:"card-img-top") %>
+          <h3><%= dog.name %>, <%= dog.age %></h3>
+          <p><%= dog.short_description %></p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
