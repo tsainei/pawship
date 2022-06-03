@@ -1,20 +1,21 @@
-// Specific CSS for your home-page
-.banner {
-  background-size: cover;
+body, html {
+  height: 100%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://images.unsplash.com/photo-1529472119196-cb724127a98e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=372&q=80");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
   background-position: center;
-  padding: 150px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 56px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 20px;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+h1, h3, p {
+  font-family: 'Redressed', cursive;
+  color: black;
 }
