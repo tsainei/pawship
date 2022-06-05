@@ -1,4 +1,5 @@
 class SwipesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
   def new; end
 
   def create
@@ -6,17 +7,21 @@ class SwipesController < ApplicationController
     swipe.swiper_dog_id = current_user.dog.id
     swipe.swiped_dog_id = params[:swiped_dog_id]
     swipe.liked = params[:liked]
+    p params
     swipe.save!
     if swipe.liked &&
          swipe
            .swiped_dog
-           .swipes.likes
+           .swipes
+           .likes
            .where(swiped_dog_id: current_user.dog.id)
            .any?
-           redirect_to swipes_path(swipe)
+      matched = true
     else
-      redirect_to dogs_path
+      matched = false
     end
+    path = swipe_path(swipe)
+    render json: { matched: matched, path: path }
   end
 
   def index
@@ -25,7 +30,7 @@ class SwipesController < ApplicationController
         liked: true,
         swiped_dog_id: current_user.dog.swipers.likes.select('swiper_dog_id'),
       )
-      @dogs = Dog.where(id: @swipes.map(&:swiped_dog_id))
+    @dogs = Dog.where(id: @swipes.map(&:swiped_dog_id))
   end
 
   def show

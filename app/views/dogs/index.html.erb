@@ -1,3 +1,28 @@
+
+
+<div class="tinder">
+  <div class="tinder--status">
+  </div>
+  <% if @dogs.empty? %>
+    <p>there's no dogs!</p>
+  <% else %>
+    <div class="tinder--cards">
+      <% @dogs.each do |dog| %>
+
+        <div class="tinder--card" data-swiped-dog="<%= dog.id %>">
+          <%= cl_image_tag(dog.photo.key, class:"card-img-top") %>
+          <h3 ><%= dog.name %>, <%= dog.age %></h3>
+          <p><%= dog.short_description %></p>
+
+        </div>
+      <% end %>
+    </div>
+    <div class="tinder--buttons">
+      <button id="nope"><i class="fa-solid fa-xmark"></i></button>
+      <button id="love"><i class="fa fa-paw"></i></button>
+    </div>
+  <% end %>
+
 <div class= "container text-center">
   <div class="card" style="width: 28rem;">
     <div class="card-body">
@@ -24,4 +49,5 @@
       <% end %>
     <% end %>
   </div>
+
 </div>

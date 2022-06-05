@@ -3,14 +3,19 @@ class DogsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    dogs = Dog.order('RANDOM()')
+    @dogs = Dog.order('RANDOM()')
+    # if current_user&.dog
+    #   dogs =
+    #     dogs
+    #       .where.not(id: current_user.dog.swipes.select('swiped_dog_id'))
+    #       .where.not(id: current_user.dog.id)
+    # end
     if current_user&.dog
-      dogs =
-        dogs
+    @dogs =
+        @dogs
           .where.not(id: current_user.dog.swipes.select('swiped_dog_id'))
           .where.not(id: current_user.dog.id)
     end
-    @dog = dogs.first
   end
 
   def new
