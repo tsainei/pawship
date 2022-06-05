@@ -5,13 +5,14 @@
   <% if @dogs.empty? %>
     <p>there's no dogs!</p>
   <% else %>
-  asdasd
     <div class="tinder--cards">
       <% @dogs.each do |dog| %>
-        <div class="tinder--card">
+
+        <div class="tinder--card" data-swiped-dog="<%= dog.id %>">
           <%= cl_image_tag(dog.photo.key, class:"card-img-top") %>
-          <h3><%= dog.name %>, <%= dog.age %></h3>
+          <h3 ><%= dog.name %>, <%= dog.age %></h3>
           <p><%= dog.short_description %></p>
+
         </div>
       <% end %>
     </div>

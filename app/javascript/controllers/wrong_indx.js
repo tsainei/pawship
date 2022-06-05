@@ -23,17 +23,32 @@ function initCards(allCards, tinderContainer) {
 
   tinderContainer.classList.add("loaded");
 }
-
+function createSwipe (liked,swiped_dog_id){
+  fetch("/swipes/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ liked: liked, swiped_dog_id: swiped_dog_id }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.matched) {
+        window.location.href = data.path;
+      }
+    });
+}
 function createButtonListener(love) {
   return function (event) {
 
     var cards = document.querySelectorAll(".tinder--card:not(.removed)");
     var moveOutWidth = document.body.clientWidth * 1.5;
 
+    createSwipe(liked, swiped_dog_id);
     if (!cards.length) return false;
 
     var card = cards[0];
-    
+    function createSwipe ();
     card.classList.add("removed");
 
     if (love) {
@@ -109,7 +124,7 @@ function initStack() {
         var yMulti = event.deltaY / 80;
         var rotate = xMulti * yMulti;
         const liked = event.deltaX > 0;
-
+      createSwipe(liked, swiped_dog_id)
         const swiped_dog_id = event.target.dataset.swipedDog;
         fetch("/swipes/", {
           method: "POST",
@@ -137,6 +152,8 @@ function initStack() {
       }
     });
   });
+
+
 
   var nopeListener = createButtonListener(false);
   var loveListener = createButtonListener(true);
