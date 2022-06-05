@@ -23,20 +23,39 @@ function initCards(allCards, tinderContainer) {
 
   tinderContainer.classList.add("loaded");
 }
-
+function createSwipe(liked, swiped_dog_id) {
+  fetch("/swipes/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ liked: liked, swiped_dog_id: swiped_dog_id }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.matched) {
+        window.location.href = data.path;
+      }
+    });
+}
 function createButtonListener(love) {
   return function (event) {
-
+    var tinderContainer = document.querySelector(".tinder");
+  var allCards = document.querySelectorAll(".tinder--card");
     var cards = document.querySelectorAll(".tinder--card:not(.removed)");
     var moveOutWidth = document.body.clientWidth * 1.5;
 
     if (!cards.length) return false;
 
     var card = cards[0];
-    
+
+    const liked = love
+    const swiped_dog_id = card.dataset.swipedDog;
+    createSwipe(liked, swiped_dog_id);
     card.classList.add("removed");
 
     if (love) {
+
       card.style.transform =
         "translate(" + moveOutWidth + "px, -100px) rotate(-30deg)";
     } else {
@@ -44,7 +63,7 @@ function createButtonListener(love) {
         "translate(-" + moveOutWidth + "px, -100px) rotate(30deg)";
     }
 
-    initCards();
+    initCards(allCards, tinderContainer);
 
     event.preventDefault();
   };
@@ -109,21 +128,8 @@ function initStack() {
         var yMulti = event.deltaY / 80;
         var rotate = xMulti * yMulti;
         const liked = event.deltaX > 0;
-
         const swiped_dog_id = event.target.dataset.swipedDog;
-        fetch("/swipes/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ liked: liked, swiped_dog_id: swiped_dog_id }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.matched) {
-              window.location.href = data.path;
-            }
-          });
+        createSwipe(liked, swiped_dog_id);
 
         event.target.style.transform =
           "translate(" +
