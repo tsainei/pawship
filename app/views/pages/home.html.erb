@@ -20,13 +20,20 @@
     <%# <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3' %>
   <%# <% end %>
 <%# </div> %>
+<div class="row justify-content-center">
 
-<div class="container">
-  </div>
-    <div class="bg">
+    <div class="bg col-12 col-lg-6">
       <div class="container">
-      <div class="mb-4 align-items-center justify-content-center mt-4">
-      <h1 class="font-weight-bold text-center mb-5" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);"><strong>PAWSHIP</strong></h1>
+      <div class="mb-4 align-items-center justify-content-center">
+
+
+    <div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-center img-fluid">
+      <%= image_tag "logo.png"  %>
+    </div>
+  </div>
+</div>
       <h3 class="font-weight-bold text-center mb-5" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">This is where your doggie finds friendship and love</h3>
       <p class="font-weight-bold text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Looking for doggo playdates in Zurich?</p>
       <p class="font-weight-bold text-center" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.2);">Look no further, Find the perfect playdate here! Lots of cute tails are wagging.</p>
@@ -44,16 +51,19 @@
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
 
-      <% if user_signed_in? == false %>
-        <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary mt-3' %>
-        <%= link_to "Browse", dogs_path, class: 'btn btn-primary mt-3' %>
-      <%else%>
-        <%= link_to "Browse", dogs_path, class: 'btn btn-warning mt-3' %>
-      <% end %>
+      <div class="container">
+        <div class="col-md-12 text-center">
+           <% if user_signed_in? == false %>
+             <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary mt-3 mb-3' %>
+             <%= link_to "Browse", dogs_path, class: 'btn btn-primary mt-3 mb-3' %>
+           <%else%>
+             <%= link_to "Browse", dogs_path, class: 'btn btn-primary mt-3 mb-3' %>
+           <% end %>
+        </div>
+    </div>
+
     </div>
   </div>
+</div>
+</div>
