@@ -1,11 +1,11 @@
+
 <div class="tinder">
   <div class="tinder--status">
-    <i class="fa fa-remove"></i>
-    <i class="fa-solid fa-paw"></i>
   </div>
   <% if @dogs.empty? %>
     <p>there's no dogs!</p>
   <% else %>
+  asdasd
     <div class="tinder--cards">
       <% @dogs.each do |dog| %>
         <div class="tinder--card">
@@ -16,8 +16,8 @@
       <% end %>
     </div>
     <div class="tinder--buttons">
-      <button id="nope"><i class="fa fa-remove"></i></button>
-      <button id="love"><i class="fa fa-heart"></i></button>
+      <button id="nope"><i class="fa-solid fa-xmark"></i></button>
+      <button id="love"><i class="fa fa-paw"></i></button>
     </div>
   <% end %>
 </div>

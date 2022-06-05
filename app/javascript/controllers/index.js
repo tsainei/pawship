@@ -18,7 +18,7 @@ function initCards(allCards, tinderContainer) {
     card.style.opacity = (10 - index) / 10;
   });
 
-  tinderContainer.classList.add("loaded");
+  tinderContfainer.classList.add("loaded");
 }
 
 function createButtonListener(love) {
