@@ -1,6 +1,8 @@
 require 'faker'
 require 'open-uri'
 
+puts "making seed inputs"
+
 addresses = ["Fortunagasse 28, Zurich", "Langmauerstrasse 30, Zurich", "Bahnhofstrasse 20, Zurich", "Rennweg 57, Zurich"]
 short_descriptions = ["A natural swimmer and hiker", "Always in for some cheese and bones", "A great cuddler and snuggler",
 "Never fails to make you laugh", "You can count on me to make you laugh", "Bring me out for long walks", "Playful and cheeky one"]
@@ -10,7 +12,10 @@ sex_orientations = ["heterosexual", "bisexual", "homosexual"]
 trainings = ["trained", "untrained", "in training"]
 hobby_list = ["Taking long walks", "Eating and munching", "Giving kisses", "Swimming", "Running"]
 
-2.times do |cpt|
+puts "seed inputs complete"
+puts "seeding fake dogs now"
+
+20.times do |cpt|
   user = User.create(
   email: Faker::Internet.email,
   password: "123456",
@@ -36,6 +41,9 @@ hobby_list = ["Taking long walks", "Eating and munching", "Giving kisses", "Swim
   dog.save
 end
 
+puts "fake dog seeds complete"
+puts "seeding dog 1 and user 1 now"
+
 user_1 = User.create(
   email: "alain@gmail.com",
   password: "123456",
@@ -53,10 +61,13 @@ dog_1= Dog.new(
   hobbies: "taking long walks",
   has_breed_certificate: true,
   user: user_1,
-  short_description: "I'm the cutest puppy ever, but I'm scared of mostly everything, especially wind."
+  short_description: "I'm the cutest puppy ever"
 )
-dog_1.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/Sherlock.jpg')), filename: 'Sherlock.jpg')
-dog_1.save
+dog_1.photo.attach(io: File.open(Rails.root.join('app/assets/images/Sherlock.jpg')), filename: 'Sherlock.jpg')
+dog_1.save!
+
+puts "dog 1 user 1 created"
+puts "creating user and dog 2 now"
 
 user_2 = User.create(
   email: "sue@gmail.com",
@@ -76,7 +87,8 @@ dog_2 = Dog.new(
   age: 3,
   has_breed_certificate: true,
   user: user_2,
-  short_description: "We are brothers but we are completely different in personality.",
+  short_description: "We are brothers.",
 )
-dog_1.photo.attach(io: File.open('app/assets/images/chico_buddy.jpg'), filename: 'chico_buddy.jpg')
-dog_2.save
+dog_2.photo.attach(io: File.open(Rails.root.join('app/assets/images/chico_buddy.jpg')), filename: 'chico_buddy.jpg')
+dog_2.save!
+puts "user and dog 2 done"
