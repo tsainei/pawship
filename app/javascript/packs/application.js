@@ -11,6 +11,5 @@ import "channels"
 Rails.start()
 ActiveStorage.start()
 
-
 import "controllers"
 import "bootstrap"
