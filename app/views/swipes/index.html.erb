@@ -1,8 +1,6 @@
 
 <h1>These are all your matches!</h1>
-
 <% @dogs.each do |dog| %>
-
  <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
 <h2>  <%= dog.name %> </h2>
 <p><%= dog.age %></p>
