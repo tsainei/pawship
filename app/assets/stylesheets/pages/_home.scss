@@ -18,11 +18,7 @@ body {
   padding-top: 30px;
 }
 
-.landing {
-  background-image: url('dogs_pic.jpg');
-  background-size: cover;
-  height: 100vh;
-}
+
 
 h1, h3, p {
   font-family: sans-serif;
@@ -47,4 +43,9 @@ h1, h3, p {
   border-radius: 50px;
   text-shadow: #212529;
   color: white;
+}
+
+.dog-img{
+  max-width: 100%;
+  margin-left: 5px;
 }
