@@ -4,6 +4,6 @@
 <h2>  <%= @swiped_dog.name %> </h2>
 <p><%= @swiped_dog.age %></p>
 <p>Contact <%= @swiped_dog.name %>'s owner <%= @swiped_dog.user.email %></p>
-<%= link_to "know more about #{@swiped_dog.name}", dogs_path(@swiped_dog), class: "btn btn-primary mt-1" %>
+<%= link_to "know more about #{@swiped_dog.name}", dog_path(@swiped_dog), class: "btn btn-primary mt-1" %>
 <%= link_to 'Find More Playdates', dogs_path, class: "btn btn-primary mt-1" %>
 </div>
