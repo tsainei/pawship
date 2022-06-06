@@ -7,6 +7,8 @@ short_descriptions = ["A natural swimmer and hiker", "Always in for some cheese 
 genders = ["male", "female"]
 personalities = ["Playful and cheeky", "Loving and caring", "The adaptable dog", "The independent dog", "A little shy and timid", "The laidback, happy dog", "The chilled and calm one"]
 sex_orientations = ["heterosexual", "bisexual", "homosexual"]
+trainings = ["trained", "untrained", "in training"]
+hobby_list = ["Taking long walks", "Eating and munching", "Giving kisses", "Swimming", "Running"]
 
 20.times do |cpt|
   user = User.create(
@@ -19,11 +21,11 @@ sex_orientations = ["heterosexual", "bisexual", "homosexual"]
     name: Faker::Creature::Dog.name,
     personality: personalities.sample,
     gender: genders.sample,
-    sex_orientation: "heterosexual",
-    training_status: "trained",
+    sex_orientation: sex_orientations.sample,
+    training_status: trainings.sample,
     breed: Faker::Creature::Dog.breed,
     address: addresses.sample,
-    hobbies: Faker::Lorem.sentence,
+    hobbies: hobby_list.sample,
     age: rand(15),
     has_breed_certificate: true,
     user: user,
