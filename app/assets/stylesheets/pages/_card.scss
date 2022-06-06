@@ -48,7 +48,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   z-index: 1;
 }
 
@@ -88,7 +88,6 @@
   left: 16px;
   color: white;
   font-size: 32px;
-  padding: 0 16px;
   pointer-events: none;
 }
 
@@ -132,4 +131,13 @@
 .fa-xmark {
   color: #CDD6DD;
   font-size: large;
+}
+
+.fa-circle-info{
+  color:white;
+  font-size: 32px;
+  position: absolute;
+  bottom: 27px;
+  right: 16px;
+  pointer-events: none;
 }

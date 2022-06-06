@@ -8,8 +8,8 @@
       <% @dogs.each do |dog| %>
         <div class="tinder--card" data-swiped-dog="<%= dog.id %>">
       <%= cl_image_tag(dog.photo.key) %>
-          <i class="fa-regular fa-circle-info"></i>
-          <i class="fa-regular fa-location-dot"></i>
+          <i class="fa fa-circle-info"></i>
+
           <h3 class="bottom-left"><%= dog.name %>, <%= dog.age %></h3>
           <p><%= dog.short_description %></p>
         </div>
