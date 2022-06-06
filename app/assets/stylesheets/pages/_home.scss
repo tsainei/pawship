@@ -26,17 +26,20 @@ h1, h3, p {
 
 .btn-primary {
   color: white;
-  background-color: #7cc;
+  background-color: rgb(62, 154, 154);
   border-color: darkolivegreen;
-  border-radius: 40%;
-  text-shadow: #212529;
+  border-radius: 50px;
+    text-shadow: #212529;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .btn{
   border: none;
 }
 .btn-primary:hover {
-  color: #212529;
-  opacity: 0.8;
+  opacity: 0.9;
 
+  background-color: rgb(62, 154, 154);
+  border-radius: 50px;
+  text-shadow: #212529;
+  color: white;
 }
