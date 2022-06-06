@@ -1,0 +1,42 @@
+@import "home";
+
+.container{
+  margin: auto;
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+
+}
+
+.box{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1000px;
+  width: 400px;
+  align-items: center;
+}
+
+.card-show{
+border: black;
+width: 400px;
+align-items: center;
+display: flex;
+text-align: center;
+}
+
+.image{
+  width: 200px;
+  height: 400px;
+  display: flex;
+}
+.card-trip-info p {
+  margin-top: 3px;
+  text-align: center;
+}
+
+.map{
+  padding: 10px 10px;
+
+}
