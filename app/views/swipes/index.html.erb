@@ -1,10 +1,12 @@
-
+<%= render 'shared/navbar' %>
 <h1>These are all your matches!</h1>
 <% @dogs.each do |dog| %>
  <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
 <h2>  <%= dog.name %> </h2>
 <p><%= dog.age %></p>
 <p>Contact <%= dog.name %>'s owner <%= dog.user.email %></p>
-<%= link_to "know more about #{dog.name}", dogs_path, class: "btn btn-primary mt-1" %>
+<div class="d-flex flex-column">
+<%= link_to "know more about #{dog.name}", dogs_path, class: "btn btn-primary mt-1 p-2" %>
 <% end %>
-<%= link_to 'Find More Playdates', dogs_path, class: "btn btn-primary mt-1" %>
+<%= link_to 'Find More Playdates', dogs_path, class: "btn btn-primary mt-1 p-2" %>
+</div>

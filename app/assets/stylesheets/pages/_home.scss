@@ -23,15 +23,21 @@ h1, h3, p {
 }
 
 .btn-primary {
-  color: #212529;
-  background-color: #7cc;
+  color: white;
+  background-color: rgb(62, 154, 154);
   border-color: darkolivegreen;
-  border-radius: 10%;
+  border-radius: 50px;
+  text-shadow: #212529;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+.btn{
+  border: none;
+}
 .btn-primary:hover {
-  color: #212529;
-  background-color: lightslategray;
-  border-color: #8ad3d3;
+  opacity: 0.9;
+
+  background-color: rgb(62, 154, 154);
+  border-radius: 50px;
+  text-shadow: #212529;
+  color: white;
 }
