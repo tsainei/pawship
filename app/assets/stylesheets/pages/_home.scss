@@ -3,34 +3,37 @@ body, html {
   background-color: white;
   background-image: url('backgroundimg.jpg');
   background-size: 250%;
-}
-
-.bg {
-  /* The image used */
-  background-image: url("https://images.unsplash.com/photo-1529472119196-cb724127a98e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=372&q=80");
-
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.logo {
+  padding-top: 30px;
+}
+
+.landing {
+  background-image: url('dogs_pic.jpg');
+  background-size: cover;
+  height: 100vh;
+
+}
+
 h1, h3, p {
   font-family: 'Redressed', cursive;
-  color: black;
+  color: whitesmoke;
 }
 
 .btn-primary {
   color: #212529;
   background-color: #7cc;
-  border-color: #5bc2c2
+  border-color: darkolivegreen;
+  border-radius: 10%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .btn-primary:hover {
   color: #212529;
-  background-color: #52bebe;
-  border-color: #8ad3d3
+  background-color: lightslategray;
+  border-color: #8ad3d3;
 }

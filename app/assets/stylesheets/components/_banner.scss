@@ -1,0 +1,16 @@
+.banner {
+  background-image: asset-url("pink_pic.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 220px 0;
+  // height: calc(100vh - 56px);
+  height: 100%;
+}
+
+.banner h3 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
