@@ -7,7 +7,6 @@ class SwipesController < ApplicationController
     swipe.swiper_dog_id = current_user.dog.id
     swipe.swiped_dog_id = params[:swiped_dog_id]
     swipe.liked = params[:liked]
-    p params
     swipe.save!
     if swipe.liked &&
          swipe
@@ -20,8 +19,9 @@ class SwipesController < ApplicationController
     else
       matched = false
     end
-    path = swipe_path(swipe)
-    render json: { matched: matched, path: path }
+    p
+    swipe.seen = true
+    render json: { matched: matched, path: swipe_path(swipe) }
   end
 
   def index
