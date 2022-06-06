@@ -1,15 +1,15 @@
 <%= render 'shared/navbar' %>
+<div class="container m-2 text-center">
 <h1>These are all your matches!</h1>
 <% @dogs.each do |dog| %>
   <div class="card-product">
-   <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
-    <div class="card-product-infos">
-
-      <h2>  <%= dog.name %> </h2>
-      <p><%= dog.age %></p>
+    <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
+    <div class="card-product-infos text-left">
+      <h2>  <%= dog.name %>, <%= dog.age %></h2>
       <p>Contact <%= dog.name %>'s owner <%= dog.user.email %></p>
-      <%= link_to "know more about #{dog.name}", dogs_path, class: "btn btn-primary mt-1" %>
+      <%= link_to "More about #{dog.name}", dogs_path, class: "btn mt-1" %>
+      <%= link_to 'Find More Playdates', dogs_path, class: "btn mt-1" %>
     <% end %>
-    <%= link_to 'Find More Playdates', dogs_path, class: "btn btn-primary mt-1" %>
   </div>
+</div>
 </div>
