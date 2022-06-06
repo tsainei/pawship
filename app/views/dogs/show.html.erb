@@ -1,11 +1,10 @@
-<div class="container m-3 mx-auto">
+<div class="container text-center">
   <h1 class="text-center "><%= @dog.name %></h1>
-  <div class="row">
-    <div class= "col">
-      <div class="card-trip mx-auto mb-4 mt-4 p-3" style="width: 45rem;">
+    <div class="box">
+      <div class="card-show">
         <% if @dog.photo.present? %>
-          <%= cl_image_tag @dog.photo.key, height: 300, width: 400, crop: :fit %>
-       <% end %>
+          <%= cl_image_tag @dog.photo.key, class: "image" %>
+        <% end %>
         <div class="card-trip-infos">
           <div>
             <p>Age: <%= @dog.age %></p>
@@ -19,20 +18,17 @@
             <p>Owner: <%= @dog.user.email %></p>
           </div>
         </div>
+      </div>
 
+
+      <div class="map text-center" style="width: 100%; height: 400px; width: 350px, position: center"
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
+        <%= link_to dogs_path,  class: 'btn btn-primary mt-3' do %>
+        <i class="fa fa-history"></i> Browse again
+        <% end %>
     </div>
-  </div>
-
-
-<br>
-
-  <div class= "col mt-4 position-sticky" style="width: 100%; height: 600px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
-    <%= link_to dogs_path,  class: 'btn btn-primary mt-3' do %>
-    <i class="fa fa-history"></i> Browse again
-    <% end %>
 </div>
