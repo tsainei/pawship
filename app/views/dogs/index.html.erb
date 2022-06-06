@@ -1,6 +1,5 @@
-
-
 <div class="tinder">
+  <%= render 'shared/navbar' %>
   <div class="tinder--status">
   </div>
   <% if @dogs.empty? %>
@@ -8,46 +7,18 @@
   <% else %>
     <div class="tinder--cards">
       <% @dogs.each do |dog| %>
-
         <div class="tinder--card" data-swiped-dog="<%= dog.id %>">
-          <%= cl_image_tag(dog.photo.key, class:"card-img-top") %>
-          <h3 ><%= dog.name %>, <%= dog.age %></h3>
-          <p><%= dog.short_description %></p>
+      <%= cl_image_tag(dog.photo.key) %>
+          <i class="fa fa-circle-info"></i>
 
+          <h3 class="bottom-left"><%= dog.name %>, <%= dog.age %></h3>
+          <p><%= dog.short_description %></p>
         </div>
       <% end %>
     </div>
     <div class="tinder--buttons">
       <button id="nope"><i class="fa-solid fa-xmark"></i></button>
-      <button id="love"><i class="fa fa-paw"></i></button>
+      <button id="love"><i class="fa-solid fa-paw"></i></button>
     </div>
   <% end %>
-
-<div class= "container text-center">
-  <div class="card" style="width: 28rem;">
-    <div class="card-body">
-      <% if @dog.present? == false %>
-        <p>there's no dogs!</p>
-      <% else %>
-        <%= cl_image_tag(@dog.photo.key, class:"card-img-top") %>
-        <h5 class="card-title"><%= @dog.name %></h5>
-        <p>  <strong>  <%= @dog.age %></strong></p>
-        <p class="card-text"><%= @dog.short_description %></p>
-      </div>
-      <% if user_signed_in? == false %>
-        <%= link_to 'More info', new_user_registration_path, class: "btn btn-primary mt-1"  %>
-        <%= link_to 'No', dogs_path, class: "btn btn-primary mt-1" %>
-        <%= link_to "Yes", new_user_registration_path, class: 'btn btn-primary mt-3' %>
-      <% elsif current_user.dog.present?   %>
-        <%= link_to 'More info', dog_path(@dog), class: "btn btn-primary mt-1"  %>
-        <%= link_to 'No!', swipes_path(swiped_dog_id: @dog.id, liked: false), class: "btn btn-primary mt-1", data: {turbo_method:'post' }  %>
-        <%= link_to 'Yes', swipes_path(swiped_dog_id: @dog.id, liked: true), class: "btn btn-primary mt-1", data: {turbo_method:'post' }  %>
-      <% else %>
-        <%= link_to 'More info', dog_path(@dog), class: "btn btn-primary mt-1"  %>
-        <%= link_to 'Create Dog profile', new_dog_path, class: "btn btn-primary mt-1" %>
-        <%= link_to 'See Another Dog!', dogs_path, class: "btn btn-primary mt-1" %>
-      <% end %>
-    <% end %>
-  </div>
-
 </div>
