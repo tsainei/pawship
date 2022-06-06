@@ -1,37 +1,32 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+<%# <div class="navbar fixed-top navbar-expand-md navbar-light bg-light"> %>
+<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%#= image_tag "https://www.zigzagadvertising.co.uk/wp-content/uploads/2018/06/paws_logo_paw_a.jpg" %>
     <% end %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
 
+    <div class="dropdown">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
+        <nav class="nav-item me-3 me-lg-0 dropdown">
             <%= image_tag "paw-navbar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-             <%= link_to "Browse", dogs_path, class: "dropdown-item" %>
-              <% if current_user.dog&.persisted? %>
-                <%= link_to "Edit dog profile", edit_dog_path(current_user.dog), class: "dropdown-item" %>
-                <%= link_to "View my dog profile", dog_path(current_user.dog), class: "dropdown-item" %>
-                <%= link_to "View all matches", swipes_path, class: "dropdown-item" %>
-
-              <% else %>
-                <%= link_to "Create dog profile", new_dog_path, class: "dropdown-item" %>
-              <% end %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
+          <div class="dropdown-menu dropdown-menu-right dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Home", root_path, class: "dropdown-item" %>
+            <%= link_to "Browse", dogs_path, class: "dropdown-item" %>
+            <% if current_user.dog&.persisted? %>
+              <%= link_to "Edit dog profile", edit_dog_path(current_user.dog), class: "dropdown-item" %>
+              <%= link_to "View my dog profile", dog_path(current_user.dog), class: "dropdown-item" %>
+              <%= link_to "View all matches", swipes_path, class: "dropdown-item" %>
+            <% else %>
+              <%= link_to "Create dog profile", new_dog_path, class: "dropdown-item" %>
+            <% end %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </nav>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+      <div class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </div>
         <% end %>
-      </ul>
     </div>
   </div>
-</div>
+</nav>

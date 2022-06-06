@@ -5,13 +5,24 @@
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
-@import "font-awesome-sprockets";
+// @import "font-awesome-sprockets";
 @import "font-awesome";
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "mapbox-gl/dist/mapbox-gl";
 
+
+.container {
+  align-content: center;
+  margin: auto;
+}
+.card {
+  box-shadow: 10px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
 body {
   margin: 0;
   padding: 0;
