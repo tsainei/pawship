@@ -7,7 +7,6 @@ class SwipesController < ApplicationController
     swipe.swiper_dog_id = current_user.dog.id
     swipe.swiped_dog_id = params[:swiped_dog_id]
     swipe.liked = params[:liked]
-    p params
     swipe.save!
     if swipe.liked &&
          swipe
@@ -39,3 +38,6 @@ class SwipesController < ApplicationController
     @swiper_dog = Dog.find(@swipe.swiper_dog_id)
   end
 end
+
+
+# add a column to the swipe seen: false/true based on that we show the icon
