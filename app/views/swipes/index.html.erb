@@ -2,6 +2,7 @@
 <div class="container m-2 text-center">
 <h1>These are all your matches!</h1>
 <% @dogs.each do |dog| %>
+
   <div class="card-product">
     <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
     <div class="card-product-infos text-left">
@@ -12,4 +13,5 @@
     <% end %>
   </div>
 </div>
+
 </div>

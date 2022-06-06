@@ -39,3 +39,6 @@ class SwipesController < ApplicationController
     @swiper_dog = Dog.find(@swipe.swiper_dog_id)
   end
 end
+
+
+# add a column to the swipe seen: false/true based on that we show the icon
