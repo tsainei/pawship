@@ -19,7 +19,6 @@ class SwipesController < ApplicationController
     else
       matched = false
     end
-    p
     swipe.seen = true
     render json: { matched: matched, path: swipe_path(swipe) }
   end
