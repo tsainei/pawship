@@ -1,12 +1,12 @@
 <%= render 'shared/navbar' %>
-<div class="container-fluid text-center">
+<div class="container text-center">
 <h1>These are all your matches!</h1>
 <% @dogs.each do |dog| %>
   <div class="card-product">
     <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
-    <div class="card-product-infos text-left">
+    <div class="card-product-infos ">
       <h2 class="mt-2">  <%= dog.name %>, <%= dog.age %></h2>
-      <p>Contact <%= dog.name %>'s owner <%= dog.user.email %></p>
+      <p class="text-left">Contact <%= dog.name %>'s owner <%= dog.user.email %></p>
       <%= link_to "More about #{dog.name}", dog_path(dog.id), class: "btn mt-2 btn-primary text-center" %>
 
     <% end %>
