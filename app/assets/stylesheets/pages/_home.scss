@@ -18,10 +18,18 @@ body {
 }
 
 
-
 h1, h3, p {
   font-family: sans-serif;
   color: black;
+  font-size: 45px;
+}
+
+p {
+  font-family: 'Nunito', sans-serif;
+}
+.btn{
+  border: none;
+  font-family: 'Nunito', sans-serif;
 }
 
 .btn-primary {
@@ -32,16 +40,13 @@ h1, h3, p {
   text-shadow: #212529;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.btn{
-  border: none;
-}
+
 .btn-primary:hover {
   opacity: 0.9;
-
   background-color: rgb(62, 154, 154);
   border-radius: 50px;
   text-shadow: #212529;
-  color: white;
+  color: black;
 }
 
 .dog-img{
