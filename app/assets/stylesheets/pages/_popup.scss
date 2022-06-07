@@ -9,6 +9,44 @@
   transition: all 0.3s ease-out;
 } */
 
+.tinder--buttons {
+  flex: 0 0 100px;
+  text-align: center;
+}
+
+.tinder--buttons button {
+  border-radius: 50%;
+  line-height: 60px;
+  width: 60px;
+  border: 0;
+  background: #FFFFFF;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.tinder--buttons button:focus {
+  outline: 0;
+}
+
+.tinder--buttons i {
+  font-size: 32px;
+  vertical-align: middle;
+}
+
+.fa-circle-info{
+  color:white;
+  font-size: 32px;
+  position: absolute;
+  bottom: 27px;
+  right: 16px;
+  //pointer-events: none;
+}
+
+
+.popup-button:hover{
+  color: black;
+}
+
 .overlay {
   position: fixed;
   top: 0;
