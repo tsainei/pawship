@@ -1,6 +1,7 @@
 
 <div class="container text-center mt-2">
 
+
  <% if @swipes.present? %>
    <h1>These are all your matches!</h1>
    <% @dogs.each do |dog| %>
@@ -21,4 +22,4 @@
 <% end %>
 
  <%= link_to 'Find More Playdates', dogs_path, class: "btn m-2 btn-primary mt-4 text-center" %>
-</div>
+

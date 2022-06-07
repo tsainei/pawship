@@ -1,12 +1,10 @@
-<div class="container text-center m-2">
-<h1>This is a match!</h1>
-  <div class="tinder--card ">
-    <%= cl_image_tag(@swiped_dog.photo.key, width: 400, height: 300, crop: :fit) %>
-    <h3 class="bottom-left">  <%= @swiped_dog.name %>, <%= @swiped_dog.age %></h3>
+<div class="match-container">
+  <h1>This is a match!</h1>
+  <div class="match-card">
+    <%= cl_image_tag(@swiped_dog.photo.key) %>
+    <h3>  <%= @swiped_dog.name %>, <%= @swiped_dog.age %></h3>
   </div>
-
-  <p >Contact <%= @swiped_dog.name %>'s owner <%= @swiped_dog.user.email %></p>
-
-    <%= link_to "know more about #{@swiped_dog.name}", dog_path(@swiped_dog), class: "btn btn-primary m-2 text-center" %>
-    <%= link_to 'Find More Playdates', dogs_path, class: "btn btn-primary mt-2 text-center" %>
+  <p class="mt-2">Contact <%= @swiped_dog.name %>'s owner <%= @swiped_dog.user.email %></p>
+  <%= link_to "Details", dog_path(@swiped_dog), class: "btn btn-gray m-2 text-center " %>
+  <%= link_to 'More Playdates', dogs_path, class: "btn btn-primary m-2 text-center" %>
 </div>
