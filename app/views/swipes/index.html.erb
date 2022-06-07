@@ -1,15 +1,18 @@
 
-<div class="container text-center m-2">
-
+<div class="container text-center mt-2">
 
 <h1>These are all your matches!</h1>
 <% @dogs.each do |dog| %>
-  <div class="card-product">
+  <div class="card-product text-start">
     <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
     <div class="card-product-infos ">
       <h2 class="mt-2">  <%= dog.name %>, <%= dog.age %></h2>
       <p class="text-left">Contact <%= dog.name %>'s owner <%= dog.user.email %></p>
       <%= link_to "Details", dog_path(dog.id), class: "btn mt-2 btn-primary text-center" %>
+
+      <h2 class="mt-2 text-start">  <%= dog.name %>, <%= dog.age %></h2>
+      <p class="text-left text-start">Contact <%= dog.name %>'s owner <%= dog.user.email %></p>
+      <%= link_to "More about #{dog.name}", dog_path(dog.id), class: "btn mt-2 btn-gray text-start" %>
 
     <% end %>
   </div>
