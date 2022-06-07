@@ -4,14 +4,13 @@ export default class extends Controller {
   static targets = ['icon', 'description'];
 
   connect() {
+
     const box = this.iconTarget
     box.addEventListener("click", (event) =>{
       this.descriptionTarget.classList.toggle("red");
       console.log(this.descriptionTarget);
     })
   }
-
-
 
   disable() {
     this.buttonTarget.innerText = 'Bingo!';

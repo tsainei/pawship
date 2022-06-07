@@ -106,10 +106,12 @@
 .details {
   position: absolute !important;
   bottom: 150px !important;
-  right: 55px !important;
-  background-color: rgb(240, 234, 230);
+  right: 40px !important;
+  left: 40px !important;
+  background-color: rgba(240, 234, 230, 0.7);
   border-radius: 10px;
-  opacity: 0.5px;
+  box-sizing: 50px;
+  box-shadow: 5px #cdd6dd;
 }
 
 .red {
