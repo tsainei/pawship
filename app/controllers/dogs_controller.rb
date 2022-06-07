@@ -15,17 +15,6 @@ class DogsController < ApplicationController
         @dogs
           .where.not(id: current_user.dog.swipes.select('swiped_dog_id'))
           .where.not(id: current_user.dog.id)
-          #@dog = @dogs.first
-          #@boxes =
-    #[{ info_window:
-        #render_to_string(
-          #partial: 'info_window_box',
-          #locals: {
-          #dog: @dog,
-          #},
-      #),
-      #image_url: helpers.asset_url('paw-marker.png'),
-    #}] =end
     end
   end
 

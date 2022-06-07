@@ -1,11 +1,12 @@
-<div class="tinder">
-
+<div class="tinder text-center">
   <div class="tinder--status">
     <i class="fa-solid fa-xmark"></i>
     <i class="fa-solid fa-paw"></i>
   </div>
   <% if @dogs.empty? %>
-    <p>there's no dogs!</p>
+    <%= image_tag "dogs.png", class: 'dog-img mb-5 mt-5' %>
+    <p>Oops, no new dogs at the moment.</p>
+    <p>Check in again later!</p>
   <% else %>
     <div class="tinder--cards">
       <% @dogs.each do |dog| %>
@@ -18,12 +19,11 @@
             <div data-popup-target="description" class="details">
               <p><%= dog.short_description %></p>
             </div>
+
           </div>
         </div>
       <% end %>
     </div>
-
-
     <div class="tinder--buttons">
       <button id="nope"><i class="fa-solid fa-xmark"></i></button>
       <button id="love"><i class="fa-solid fa-paw"></i></button>

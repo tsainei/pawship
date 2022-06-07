@@ -25,11 +25,6 @@
   pointer-events: none;
 }
 
-.tinder--buttons {
-  flex: 0 0 100px;
-  text-align: center;
-}
-
 .tinder--status i {
   font-size: 100px;
   opacity: 0;
@@ -73,6 +68,7 @@
   cursor: -webkit-grab;
   cursor: -moz-grab;
   cursor: grab;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .moving.tinder--card {
@@ -82,11 +78,11 @@
   cursor: grabbing;
 }
 
- .tinder--card img {
+.tinder--card img {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .tinder--card h3 {
@@ -145,7 +141,7 @@
   background: rgb(243, 243, 242);
   display: inline-block;
   margin: 0 8px;
-
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .tinder--buttons button:focus {
@@ -158,12 +154,12 @@
 }
 
 .fa-paw {
-  color: #FFACE4;
+  color: #fface4;
   font-size: large;
 }
 
 .fa-xmark {
-  color: #CDD6DD;
+  color: #cdd6dd;
   font-size: large;
 }
 
@@ -171,7 +167,7 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
 }
@@ -191,11 +187,41 @@
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 0;
   margin-top: 8px;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+.match-container{
+  text-align: center;
+  margin-top: 24px;
+}
+.match-card {
+display: block;
+  width: 90vw;
+  height: 50vh;
+  position: absolute;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.match-card img {
+  display:block;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+
+.match-card h3 {
+  bottom: 17px;
+  left: 16px;
+  color: white;
+  font-size: 32px;
+  position: absolute;
 }

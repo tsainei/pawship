@@ -1,7 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: lightgoldenrodyellow;
+  background: #ffe662;
   width: 100%;
+  opacity: 0.9;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 50;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,7 +17,7 @@
 }
 
 .nav-link {
-  font-family: 'Redressed', cursive;
+  font-family:  Helvetica, sans-serif;
   color: black;
   display: block;
   padding: 0.5rem 1rem;
