@@ -3,21 +3,17 @@
     <h1>These are all your matches!</h1>
     <% @dogs.each do |dog| %>
       <div class="card-product text-start mt-3">
-        <%= cl_image_tag(dog.photo.key, width: 400, height: 300, crop: :fit) %>
+        <%= cl_image_tag(dog.photo.key) %>
         <div class="card-product-infos ">
           <h2 class="mt-2">  <%= dog.name %>, <%= dog.age %></h2>
           <p class="text-left">Contact <%= dog.name %>'s owner <%= dog.user.email %></p>
           <%= link_to "Details", dog_path(dog.id), class: "btn mt-2 btn-gray mb-2 text-center" %>
         </div>
       </div>
-
-      </div>
-   <% end %>
+    </div>
+  <% end %>
 <% else %>
   <%= image_tag "sad_dog.gif", class: 'dog-img mb-5 mt-5' %>
   <h1>Oops, no matches yet, keep browsing!</h1>
 <% end %>
-
- <%= link_to 'Find More Playdates', dogs_path, class: "btn m-2 btn-primary mt-4 text-center" %>
-
-    
+<%= link_to 'Find More Playdates', dogs_path, class: "btn m-2 btn-primary mt-4 text-center" %>
