@@ -95,7 +95,7 @@
 }
 
 .fa-circle-info{
-  color:rgb(255, 255, 255);
+  color:rgb(235, 199, 199);
   font-size: 32px;
   position: absolute;
   bottom: 27px;
@@ -105,21 +105,18 @@
 
 .details {
   position: absolute !important;
-  bottom: 150px !important;
+  bottom: 50px !important;
   right: 40px !important;
   left: 40px !important;
-  background-color: rgba(240, 234, 230, 0.7);
-  border-radius: 10px;
-  box-sizing: 50px;
-  box-shadow: 5px #cdd6dd;
-}
-
-.red {
-  display: none;
+  background: rgba(196, 196, 196, 0.61);
+  border-radius: 12px;
+  height: 300px;
 }
 
 .tinder--card p {
-  margin-top: 24px;
+  text-align: center;
+  text-decoration-style: bold !important;
+  margin-top: 100px;
   font-size: 20px;
   margin-bottom: 24px;
   padding: 0 16px;
