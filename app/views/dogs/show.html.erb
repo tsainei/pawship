@@ -1,31 +1,28 @@
-<div class="container text-center m-2">
-  <h1 class="text-center "><%= @dog.name %></h1>
-    <div class="box">
-      <div class="card-show">
-        <% if @dog.photo.present? %>
-          <%= cl_image_tag @dog.photo.key, class: "image mb-3 shadow-lg mb-3 mt-3 rounded-30" %>
-        <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <p>Age: <%= @dog.age %></p>
-            <p>Gender: <%= @dog.gender %></p>
-            <p>Personality: <%= @dog.personality %></p>
-            <p>Sexual orientation: <%= @dog.sex_orientation %></p>
-            <p>Breed: <%= @dog.breed %></p>
-            <p>Breed certificate: <%= @dog.has_breed_certificate %></p>
-            <p>Hobbies: <%= @dog.hobbies %></p>
-            <p>Address: <%= @dog.address %></p>
-            <p>Owner: <%= @dog.user.email %></p>
-          </div>
-        </div>
-      </div>
-      <div class="map text-center" style="width: 100%; height: 400px; width: 350px, position: center"
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-        <%= link_to dogs_path,  class: 'btn btn-primary mt-3 mb-3' do %>
-        <i class="fa fa-history"></i> Browse again
-        <% end %>
-    </div>
+<div class="card mt-3 mb-3">
+  <% if @dog.photo.present? %>
+    <%= cl_image_tag @dog.photo.key %>
+  <% end %>
+  <div class="container">
+    <h2><strong><%= @dog.name %></strong></h2>
+    <h3 id="description-font"><%= @dog.short_description %></h3>
+    <p><strong>Age:</strong> <%= @dog.age %></p>
+    <p><strong>Gender:</strong> <%= @dog.gender %></p>
+    <p><strong>Personality:</strong> <%= @dog.personality %></p>
+    <p><strong>Sexual orientation:</strong> <%= @dog.sex_orientation %></p>
+    <p><strong>Breed:</strong> <%= @dog.breed %></p>
+    <p><strong>Breed certificate:</strong> <%= @dog.has_breed_certificate %></p>
+    <p><strong>Hobbies:</strong> <%= @dog.hobbies %></p>
+    <p><strong>Address:</strong> <%= @dog.address %></p>
+    <p><strong>Owner:</strong> <%= @dog.user.email %></p>
+  </div>
 </div>
+
+<div class="map text-center" style="width: 100%; height: 400px; width: 350px, position: center"
+  data-controller="mapbox"
+  data-mapbox-markers-value="<%= @markers.to_json %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<%= link_to dogs_path,  class: 'btn btn-primary btn-sm m-3 d-flex flex-column' do %>
+  <i class="fa fa-history"></i> Browse again
+<% end %>

@@ -28,7 +28,7 @@ p {
   font-family: helvetica;
 
   color: black;
-  font-size: 45px;
+  // font-size: 45px;
 }
 
 p {
@@ -48,13 +48,11 @@ p {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   opacity: 0.9;
 }
-<<<<<<< HEAD
+
 .btn {
   border: none;
 }
-=======
 
->>>>>>> main
 .btn-primary:hover {
   opacity: 0.8;
   background-color: #ffe662;
@@ -71,15 +69,12 @@ p {
   text-shadow: #212529;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   opacity: 0.9;
-<<<<<<< HEAD
 }
 
 .btn-gray:hover {
   opacity: 0.8;
   background-color: #bbbab5;
-=======
   background-color: rgb(62, 154, 154);
->>>>>>> main
   border-radius: 50px;
   text-shadow: #212529;
   color: black;
@@ -89,6 +84,24 @@ p {
   max-width: 100%;
   margin-left: 5px;
 }
+
+#description-font {
+  color:darkblue;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 8px 32px;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  padding: 8px 32px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
