@@ -26,20 +26,6 @@ function initCards(allCards, tinderContainer) {
   tinderContainer.classList.add("loaded");
 }
 
-/* function PopupToSwipe() {
-  this.boxesValue.forEach((box) => {
-    const popup = new Popup().setHTML(box.info_window_box)
-
-    const customBox = document.createElement("div")
-      customBox.className = "box"
-      customBox.style.backgroundImage = `url('${box.image_url}')`
-      customBox.style.backgroundSize = "contain"
-      customBox.style.width = "60px"
-      customBox.style.height = "60px"
-  })
-}
-
-PopupToSwipe() */
 
 function createSwipe(liked, swiped_dog_id) {
   fetch("/swipes/", {
