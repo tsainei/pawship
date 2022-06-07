@@ -21,7 +21,7 @@ body {
 h1, h3, p {
   font-family: sans-serif;
   color: black;
-  font-size: 45px;
+  // font-size: 45px;
 }
 
 p {
@@ -52,4 +52,23 @@ p {
 .dog-img{
   max-width: 100%;
   margin-left: 5px;
+}
+
+#description-font {
+  color:darkblue;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 8px 32px;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  padding: 8px 32px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
