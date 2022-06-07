@@ -10,12 +10,16 @@ legend ~ div.form-check:first-of-type {
 }
 
 #feedback-form {
-  width: 280px;
+  width: 350px;
   margin: 0 auto;
   background-color: #fcfcfc;
   padding: 50px 50px 40px;
   box-shadow: 1px 4px 10px 1px #aaa;
   font-family: sans-serif;
+  .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 #feedback-form * {

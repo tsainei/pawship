@@ -5,7 +5,8 @@
 <nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-    <% end %>
+      <%= image_tag 'logo_small.png', alt: 'pawship' %>
+        <% end %>
 
     <div class="dropdown">
         <% if user_signed_in? %>

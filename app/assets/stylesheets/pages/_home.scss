@@ -30,44 +30,44 @@ p {
   color: black;
   // font-size: 45px;
 }
-.btn {
+
+
+.btn:not(.btn-sm) {
   border: none;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+
+  padding: 12px;
+  margin: 24px auto;
+  font-size: 20px;
+  width: 300px;
+  display: block;
+  border-radius: 15px;
+  border-color: none;
+  text-shadow: #212529;
+  color: black;
+}
+.btn-sm {
+  display: inline;
+  width: auto;
+}
+.btn:hover {
+  color: black;
 }
 
 .btn-primary {
-  color: black;
   background-color: #ffe662;
-  border-color: none;
-  border-radius: 50px;
-  text-shadow: #212529;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  opacity: 0.9;
 }
 
 .btn-primary:hover {
-  opacity: 0.8;
-  background-color: #ffe662;
-  border-radius: 50px;
-  text-shadow: #212529;
-  color: black;
+  background-color: #efc642;
 }
 
 .btn-gray {
-  color: black;
   background-color: #cecdc9;
-  border-color: none;
-  border-radius: 50px;
-  text-shadow: #212529;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  opacity: 0.9;
 }
 
 .btn-gray:hover {
-  opacity: 0.8;
-  background-color: #cecdc9;
-  border-radius: 50px;
-  text-shadow: #212529;
-  color: black;
+  background-color: #aeada9;
 }
 
 .dog-img {

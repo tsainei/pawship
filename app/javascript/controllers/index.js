@@ -13,6 +13,7 @@ application.load(definitionsFromContext(context));
 function initCards(allCards, tinderContainer) {
   var newCards = document.querySelectorAll(".tinder--card:not(.removed)");
   if (newCards.length == 0) {
+    Turbo.visit("/dogs");
     return;
   }
   newCards.forEach(function (card, index) {
