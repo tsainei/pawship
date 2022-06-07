@@ -22,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 h1,
 h3,
 p {
@@ -32,11 +33,11 @@ p {
 }
 
 p {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
-.btn{
+.btn {
   border: none;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 .btn-primary {
@@ -47,10 +48,6 @@ p {
   text-shadow: #212529;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   opacity: 0.9;
-}
-
-.btn {
-  border: none;
 }
 
 .btn-primary:hover {
@@ -74,7 +71,6 @@ p {
 .btn-gray:hover {
   opacity: 0.8;
   background-color: #bbbab5;
-  background-color: rgb(62, 154, 154);
   border-radius: 50px;
   text-shadow: #212529;
   color: black;
@@ -86,11 +82,11 @@ p {
 }
 
 #description-font {
-  color:darkblue;
+  color: darkblue;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Add some padding inside the card container */
@@ -102,7 +98,7 @@ p {
   /* Add shadows to create the "card" effect */
   padding: 8px 32px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .log-buttons {
