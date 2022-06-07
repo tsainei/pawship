@@ -14,12 +14,12 @@
 
 <div class="log-buttons">
   <% if user_signed_in? == false %>
-    <%= link_to "Login", new_user_session_path, class: 'px-3 btn btn-primary m-2' %>
-    <%= link_to "Sign up", new_user_registration_path, class: 'px-3 btn btn-gray m-2' %>
-    <%= link_to "Browse", dogs_path, class: 'px-3 btn btn-gray m-2' %>
+    <%= link_to "Login", new_user_session_path, class: 'px-3 btn btn-primary mt-0' %>
+    <%= link_to "Sign up", new_user_registration_path, class: 'px-3 btn btn-gray mt-0' %>
+    <%= link_to "Browse", dogs_path, class: 'px-3 btn btn-gray mt-0' %>
   <% else %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'px-3 btn btn-gray m-2' %>
-    <%= link_to "Browse", dogs_path, class: 'px-3 btn btn-primary m-2' %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'px-3 btn btn-gray mt-0' %>
+    <%= link_to "Browse", dogs_path, class: 'px-3 btn btn-primary mt-0' %>
   <% end %>
 </div>
 <%# </div> %>
