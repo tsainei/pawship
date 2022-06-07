@@ -73,6 +73,7 @@
   cursor: -webkit-grab;
   cursor: -moz-grab;
   cursor: grab;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .moving.tinder--card {
@@ -112,6 +113,7 @@
   bottom: 0;
   width: 400px;
   z-index: 10;
+
 }
 
 .tinder--buttons button {
@@ -122,7 +124,7 @@
   background: rgb(243, 243, 242);
   display: inline-block;
   margin: 0 8px;
-
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .tinder--buttons button:focus {

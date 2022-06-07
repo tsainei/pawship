@@ -15,6 +15,7 @@ class DogsController < ApplicationController
         @dogs
           .where.not(id: current_user.dog.swipes.select('swiped_dog_id'))
           .where.not(id: current_user.dog.id)
+       
     end
   end
 
