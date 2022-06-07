@@ -1,0 +1,15 @@
+{
+  "background_color": "white",
+  "description": "Pawship.",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/logo-app.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Pawship",
+  "short_name": "Pawship",
+  "start_url": "/"
+}
