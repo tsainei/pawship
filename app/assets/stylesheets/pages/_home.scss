@@ -1,24 +1,27 @@
 body, html {
-  height: 100%;
+  min-height: 100%;
   background-color: white;
   background-image: url('Pattern_background.png');
-  background-size: 200%;
-
+  background-size: 50%;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden auto;
+  max-width: 100%;
+}
+
 
 .logo {
   padding-top: 30px;
 }
 
-.landing {
-  background-image: url('dogs_pic.jpg');
-  background-size: cover;
-  height: 100vh;
 
-}
 
 h1, h3, p {
-  font-family: 'Redressed', cursive;
+  font-family: sans-serif;
   color: black;
 }
 
@@ -40,4 +43,9 @@ h1, h3, p {
   border-radius: 50px;
   text-shadow: #212529;
   color: white;
+}
+
+.dog-img{
+  max-width: 100%;
+  margin-left: 5px;
 }

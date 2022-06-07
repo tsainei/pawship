@@ -1,10 +1,13 @@
 .tinder {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
+  left: 50vw;
+  width: 400px;
+  margin-left: -200px;
+  left: 50vw;
+  top: 15vh;
   transition: opacity 0.1s ease-in-out;
 }
 
@@ -37,12 +40,12 @@
   margin-left: -50px;
 }
 
-.tinder_love .fa-heart {
+.tinder_love .fa-paw {
   opacity: 0.7;
   transform: scale(1);
 }
 
-.tinder_nope .fa-remove {
+.tinder_nope .fa-xmark {
   opacity: 0.7;
   transform: scale(1);
 }
@@ -105,6 +108,10 @@
 .tinder--buttons {
   flex: 0 0 100px;
   text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 400px;
+  z-index: 10;
 }
 
 .tinder--buttons button {
@@ -124,6 +131,7 @@
 .tinder--buttons i {
   font-size: 32px;
   vertical-align: middle;
+
 }
 
 .fa-paw {
@@ -135,6 +143,7 @@
   color: #CDD6DD;
   font-size: large;
 }
+
 
 .fa-circle-info{
   color:white;
@@ -184,3 +193,4 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+

@@ -1,5 +1,7 @@
 
 <%# <div class="navbar fixed-top navbar-expand-md navbar-light bg-light"> %>
+
+<% if controller_name != 'pages'  %>
 <nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
@@ -30,3 +32,4 @@
     </div>
   </div>
 </nav>
+<% end %>
