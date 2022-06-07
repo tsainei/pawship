@@ -119,9 +119,10 @@
   line-height: 60px;
   width: 60px;
   border: 0;
-  background: #FFFFFF;
+  background: rgb(243, 243, 242);
   display: inline-block;
   margin: 0 8px;
+
 }
 
 .tinder--buttons button:focus {
@@ -193,4 +194,3 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
-
