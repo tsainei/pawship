@@ -1,6 +1,9 @@
+
 <div class="tinder">
-  <%= render 'shared/navbar' %>
+
   <div class="tinder--status">
+    <i class="fa-solid fa-xmark"></i>
+    <i class="fa-solid fa-paw"></i>
   </div>
   <% if @dogs.empty? %>
     <p>there's no dogs!</p>
@@ -10,7 +13,6 @@
         <div class="tinder--card" data-swiped-dog="<%= dog.id %>">
       <%= cl_image_tag(dog.photo.key) %>
           <i class="fa fa-circle-info"></i>
-
           <h3 class="bottom-left"><%= dog.name %>, <%= dog.age %></h3>
           <p><%= dog.short_description %></p>
         </div>

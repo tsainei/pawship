@@ -34,7 +34,7 @@ function createSwipe(liked, swiped_dog_id) {
     .then((response) => response.json())
     .then((data) => {
       if (data.matched) {
-        window.location.href = data.path;
+        Turbo.visit(data.path);
       }
     });
 }
@@ -74,6 +74,7 @@ function initStack() {
   var allCards = document.querySelectorAll(".tinder--card");
   var nope = document.getElementById("nope");
   var love = document.getElementById("love");
+  if (!love) return;
 
   initCards(allCards, tinderContainer);
 
@@ -151,4 +152,4 @@ function initStack() {
   love.addEventListener("click", loveListener);
 }
 
-document.addEventListener("DOMContentLoaded", initStack);
+document.addEventListener("turbo:load", initStack);
