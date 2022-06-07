@@ -1,8 +1,14 @@
+.mapboxgl-canvas{
+  width: 800px;
+}
+
 .mapboxgl-popup {
   max-width: 200px;
+  border-radius: 30px;
+  background-color: aqua;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
 }

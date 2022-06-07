@@ -58,7 +58,7 @@ class DogsController < ApplicationController
           dog: @dog,
           },
        ),
-      image_url: helpers.asset_url('item_map.png'),
+      image_url: helpers.asset_url('paw-marker.png'),
     }]
   end
 
