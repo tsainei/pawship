@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 2022_06_06_190458) do
     t.integer "swiped_dog_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "seen", default: false
   end
 
   create_table "users", force: :cascade do |t|
