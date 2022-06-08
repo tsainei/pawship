@@ -3,7 +3,7 @@ class DogsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @dogs = Dog.order('RANDOM()')
+    @dogs = Dog.order(current_user&.demo? ? 'id DESC' : 'RANDOM()')
     # if current_user&.dog
     #   dogs =
     #     dogs

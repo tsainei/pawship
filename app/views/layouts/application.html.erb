@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Redressed&family=Space+Mono&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body <%= current_user&.demo? ? 'data-demo="1"' : "" %>>
     <%= render 'shared/navbar' %>
 
 
