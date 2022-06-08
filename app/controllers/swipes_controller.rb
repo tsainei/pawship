@@ -19,8 +19,8 @@ class SwipesController < ApplicationController
     else
       matched = false
     end
-    swipe.seen = true
-    render json: { matched: matched, path: swipe_path(swipe) }
+    path = swipe_path(swipe)
+    render json: { matched: matched, path: path }
   end
 
   def index
@@ -39,5 +39,3 @@ class SwipesController < ApplicationController
   end
 end
 
-
-# add a column to the swipe seen: false/true based on that we show the icon
