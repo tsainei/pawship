@@ -14,7 +14,9 @@
     </div>
   <% end %>
 <% else %>
+<div class="contaier text-center">
   <%= image_tag "sad_dog.gif", class: 'dog-img mb-5 mt-5' %>
   <h1>Oops, no matches yet, keep browsing!</h1>
+  </div>
 <% end %>
 <%= link_to 'Find More Playdates', dogs_path, class: "btn btn-primary mt-4 text-center" %>
