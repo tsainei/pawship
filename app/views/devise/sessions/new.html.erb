@@ -16,7 +16,7 @@
       <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-      <%# <%= link_to "Forgot password?", new_password_path(resource_name), class: "text-secondary text-decoration-none h6" %> %>
+      <%# <%= link_to "Forgot password?", new_password_path(resource_name), class: "text-secondary text-decoration-none h6" %> 
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
     <div class="d-flex flex-column">
