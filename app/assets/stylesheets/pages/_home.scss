@@ -25,17 +25,21 @@ body {
 
 h1,
 h3,
+h2,
 p {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Nunito', 'Montserrat', Arial, Helvetica, sans-serif;
   color: #2B2B2B;
   // font-size: 45px;
 }
 
+.home-font{
+  font-size: larger;
+  font-weight: 500;
+}
 
 .btn:not(.btn-sm) {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
-
   padding: 12px;
   margin: 24px auto;
   font-size: 20px;
@@ -49,6 +53,7 @@ p {
 .btn-sm {
   display: inline;
   width: auto;
+  border-radius: 15px;
 }
 .btn:hover {
   color: #2B2B2B;
