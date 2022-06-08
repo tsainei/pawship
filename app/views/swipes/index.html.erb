@@ -1,7 +1,8 @@
-<div class="container text-center mt-2">
-  <% if @swipes.present? %>
-    <h1>These are all your matches!</h1>
+<% if @swipes.present? %>
+    <h1 class="text-center mt-3">These are all your matches!</h1>
+
     <% @dogs.each do |dog| %>
+    <div class="container text-center">
       <div class="card-product text-start mt-3">
         <%= cl_image_tag(dog.photo.key) %>
         <div class="card-product-infos ">
