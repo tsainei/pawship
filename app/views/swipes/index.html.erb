@@ -5,9 +5,9 @@
       <div class="card-product text-start mt-3">
         <%= cl_image_tag(dog.photo.key) %>
         <div class="card-product-infos ">
-          <h2 class="mt-2">  <%= dog.name %>, <%= dog.age %></h2>
-          <p class="text-left">Contact <%= dog.name %>'s owner at: <a href = "mailto: kerrypang15@gmail.com"><%= dog.user.email %></a></p>
-          <%= link_to "Details", dog_path(dog.id), class: "btn mt-2 btn-sm btn-gray mb-2 text-center" %>
+          <h2>  <%= dog.name %>, <%= dog.age %></h2>
+          <p class="text-left mb-2">Contact <a href = "mailto: kerrypang15@gmail.com"><%= dog.user.email %></a></p>
+          <%= link_to "Details", dog_path(dog.id), class: "btn  btn-sm btn-gray mb-2 mt-5 text-center" %>
         </div>
       </div>
     </div>
