@@ -13,11 +13,12 @@
         <div class="tinder--card" data-swiped-dog="<%= dog.id %>">
           <%= cl_image_tag(dog.photo.key) %>
           <%= cl_image_tag(dog.photo.key) %>
-          <i class="fa fa-circle-info"></i>
           <h3 class="bottom-left"><%= dog.name %>, <%= dog.age %></h3>
-          <i class="fa fa-circle-info"><a href="#popup1" class="popup-button"></a></i>
-          <div class="content">
-            <p><%= dog.short_description %></p>
+          <div data-controller="popup">
+            <i class="fa fa-circle-info" data-popup-target="icon"></i>
+            <div data-popup-target="description">
+              <p><%= dog.short_description %></p>
+            </div>
           </div>
         </div>
       <% end %>
@@ -25,12 +26,6 @@
     <div class="tinder--buttons">
       <button id="nope"><i class="fa-solid fa-xmark"></i></button>
       <button id="love"><i class="fa-solid fa-paw"></i></button>
-      <div id="popup1" class="overlay">
-        <div class="popup">
-          <h2>Details</h2>
-          <a class="close" href="#">&times;</a>
-        </div>
-      </div>
     </div>
   <% end %>
 </div>

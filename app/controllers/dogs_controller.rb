@@ -15,7 +15,6 @@ class DogsController < ApplicationController
         @dogs
           .where.not(id: current_user.dog.swipes.select('swiped_dog_id'))
           .where.not(id: current_user.dog.id)
-       
     end
   end
 
@@ -58,7 +57,7 @@ class DogsController < ApplicationController
           locals: {
           dog: @dog,
           },
-       ),
+      ),
       image_url: helpers.asset_url('paw-marker.png'),
     }]
   end

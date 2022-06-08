@@ -94,9 +94,31 @@
   pointer-events: none;
 }
 
+.fa-circle-info{
+  color:#FFE662;
+  font-size: 32px;
+  position: absolute;
+  bottom: 27px;
+  right: 16px;
+  opacity: 0.5px;
+}
+
+.details {
+  position: absolute !important;
+  bottom: 50px !important;
+  right: 40px !important;
+  left: 40px !important;
+  background: rgba(196, 196, 196, 0.61);
+  border-radius: 12px;
+  height: 300px;
+}
+
 .tinder--card p {
-  margin-top: 24px;
+  text-align: center;
+  text-decoration-style: bold !important;
+  margin-top: 100px;
   font-size: 20px;
+  margin-bottom: 24px;
   padding: 0 16px;
   pointer-events: none;
 }
@@ -139,15 +161,6 @@
   color: #cdd6dd;
   font-size: large;
 }
-
-/* .fa-circle-info{
-  color:white;
-  font-size: 32px;
-  position: absolute;
-  bottom: 27px;
-  right: 16px;
-  //pointer-events: none;
-} */
 
 .card-product {
   overflow: hidden;

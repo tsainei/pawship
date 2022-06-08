@@ -4,6 +4,7 @@
 import { Application } from "stimulus";
 import { definitionsFromContext } from "stimulus/webpack-helpers";
 import Hammer from "hammerjs";
+import { Popup } from "mapbox-gl";
 
 const application = Application.start();
 const context = require.context("controllers", true, /_controller\.js$/);
@@ -24,6 +25,8 @@ function initCards(allCards, tinderContainer) {
 
   tinderContainer.classList.add("loaded");
 }
+
+
 function createSwipe(liked, swiped_dog_id) {
   fetch("/swipes/", {
     method: "POST",
