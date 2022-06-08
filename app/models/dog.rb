@@ -12,7 +12,6 @@ class Dog < ApplicationRecord
             :sex_orientation,
             :training_status,
             :breed,
-            :has_breed_certificate,
             :hobbies,
             :address,
             :photo,
