@@ -31,7 +31,7 @@ puts "seeding fake dogs now"
     breed: Faker::Creature::Dog.breed,
     address: addresses.sample,
     hobbies: hobby_list.sample,
-    age: rand(15),
+    age: "#{rand(15)}yo",
     has_breed_certificate: true,
     user: user,
     short_description: short_descriptions.sample,
@@ -84,7 +84,7 @@ dog_2 = Dog.new(
   breed: Faker::Creature::Dog.breed,
   address: addresses.sample,
   hobbies: hobby_list.sample,
-  age: 3,
+  age: "3yo",
   has_breed_certificate: true,
   user: user_2,
   short_description: "We are brothers."
@@ -103,7 +103,7 @@ user_3 = User.create(
 
 dog_3= Dog.new(
   name: "Binky",
-  age: "9",
+  age: "9yo",
   gender: "male",
   personality: "Reliable and friendly",
   sex_orientation: "heterosexual",
@@ -129,7 +129,7 @@ user_4 = User.create(
 
 dog_4= Dog.new(
   name: "Brownie",
-  age: "1",
+  age: "1yo",
   gender: "male",
   personality: "Playful and a real foodie",
   sex_orientation: "heterosexual",
@@ -155,7 +155,7 @@ user_5 = User.create(
 
 dog_5= Dog.new(
   name: "Maggie",
-  age: "1",
+  age: "1yo",
   gender: "female",
   personality: "A happy paw friend who loves kisses",
   sex_orientation: "heterosexual",
@@ -181,7 +181,7 @@ user_6 = User.create(
 
 dog_6= Dog.new(
   name: "Timo",
-  age: "13",
+  age: "13yo",
   gender: "male",
   personality: "Gentle and calm, lives only to be patted on the head",
   sex_orientation: "heterosexual",
