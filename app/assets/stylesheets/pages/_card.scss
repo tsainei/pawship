@@ -95,6 +95,10 @@
   pointer-events: none;
 }
 
+.change-icon-color {
+  color: #dddbd5 !important;
+}
+
 .fa-circle-info {
   color:#FFE662;
   text-shadow: 0px 10px 15px #404040;
@@ -105,10 +109,6 @@
   opacity: 0.5px;
 }
 
-.fa-circle-info:active {
-  color: #9E9362;
-}
-
 .details {
   position: absolute !important;
   bottom: 70px !important;
@@ -117,6 +117,9 @@
   background: rgba(196, 196, 196, 0.78);
   border-radius: 12px;
   height: 290px;
+  // .fa-circle-info:active & {
+  //   color: #9E9362;
+  // }
 }
 
 .tinder--card p {

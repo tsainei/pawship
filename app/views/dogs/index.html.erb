@@ -15,7 +15,7 @@
           <%= cl_image_tag(dog.photo.key) %>
           <h3 class="bottom-left"><%= dog.name %>, <%= dog.age %></h3>
           <div data-controller="popup">
-            <i class="fa fa-circle-info" data-popup-target="icon"></i>
+            <i id="btn" class="fa fa-circle-info" data-popup-target="icon"></i>
             <div data-popup-target="description">
               <p><%= dog.short_description %></p>
             </div>
