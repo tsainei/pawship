@@ -96,11 +96,13 @@ function initStack() {
       tinderContainer.classList.toggle("tinder_love", event.deltaX > 0);
       tinderContainer.classList.toggle("tinder_nope", event.deltaX < 0);
 
+      const target = event.target.closest(".tinder--card");
+
       var xMulti = event.deltaX * 0.03;
       var yMulti = event.deltaY / 80;
       var rotate = xMulti * yMulti;
 
-      event.target.style.transform =
+      target.style.transform =
         "translate(" +
         event.deltaX +
         "px, " +
@@ -111,6 +113,7 @@ function initStack() {
     });
 
     hammertime.on("panend", function (event) {
+      const target = event.target.closest(".tinder--card");
       el.classList.remove("moving");
       tinderContainer.classList.remove("tinder_love");
       tinderContainer.classList.remove("tinder_nope");
@@ -118,9 +121,9 @@ function initStack() {
       var moveOutWidth = document.body.clientWidth;
       var keep = Math.abs(event.deltaX) < 80 || Math.abs(event.velocityX) < 0.5;
 
-      event.target.classList.toggle("removed", !keep);
+      target.classList.toggle("removed", !keep);
       if (keep) {
-        event.target.style.transform = "";
+        target.style.transform = "";
       } else {
         var endX = Math.max(
           Math.abs(event.velocityX) * moveOutWidth,
@@ -133,10 +136,10 @@ function initStack() {
         var yMulti = event.deltaY / 80;
         var rotate = xMulti * yMulti;
         const liked = event.deltaX > 0;
-        const swiped_dog_id = event.target.dataset.swipedDog;
+        const swiped_dog_id = target.dataset.swipedDog;
         createSwipe(liked, swiped_dog_id);
 
-        event.target.style.transform =
+        target.style.transform =
           "translate(" +
           toX +
           "px, " +

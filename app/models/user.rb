@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :dog
+
+  def demo?
+    email&.match?(/(anita|kerry|rosanna|alain|sue|demo)/)
+  end
 end

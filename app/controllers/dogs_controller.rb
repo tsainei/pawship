@@ -3,7 +3,8 @@ class DogsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @dogs = Dog.order('RANDOM()')
+    @dogs = Dog.order(current_user&.demo? ? 'id DESC' : 'RANDOM()')
+
     # if current_user&.dog
     #   dogs =
     #     dogs
@@ -11,7 +12,7 @@ class DogsController < ApplicationController
     #       .where.not(id: current_user.dog.id)
     # end
     if current_user&.dog
-    @dogs =
+      @dogs =
         @dogs
           .where.not(id: current_user.dog.swipes.select('swiped_dog_id'))
           .where.not(id: current_user.dog.id)
@@ -27,8 +28,7 @@ class DogsController < ApplicationController
     @dog.user = current_user
 
     if @dog.save
-      redirect_to dogs_path,
-                  notice: 'Your dog profile was successfully created.'
+      redirect_to dog_path(@dog.id)
     else
       render :new
     end
@@ -47,19 +47,15 @@ class DogsController < ApplicationController
   end
 
   def show
-    @markers =
-    [{
-      lat: @dog.latitude,
-      lng: @dog.longitude,
-      info_window:
-        render_to_string(
-          partial: 'info_window',
-          locals: {
-          dog: @dog,
-          },
-      ),
-      image_url: helpers.asset_url('paw-marker.png'),
-    }]
+    @markers = [
+      {
+        lat: @dog.latitude,
+        lng: @dog.longitude,
+        info_window:
+          render_to_string(partial: 'info_window', locals: { dog: @dog }),
+        image_url: helpers.asset_url('paw-marker.png'),
+      },
+    ]
   end
 
   private
@@ -79,7 +75,7 @@ class DogsController < ApplicationController
         :hobbies,
         :address,
         :short_description,
-        :photo
+        :photo,
       )
   end
 
