@@ -11,13 +11,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Redressed&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Redressed&family=Space+Mono&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body <%= current_user&.demo? ? 'data-demo="1"' : "" %>>
+    <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
-
-
     <%= yield %>
   </body>
-</html>
+  </html>

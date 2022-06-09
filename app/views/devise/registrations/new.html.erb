@@ -1,36 +1,27 @@
-<div class="container">
-<br>
-<br>
-<br>
-<br>
-<br>
-</div>
-
-<div id="feedback-form">
-  <h2 class="header">New account</h2>
-
+<div class="containter">
+  <div id="feedback-form" class="my-5">
+    <h2 class="header">New account</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }) do |f| %>
-    <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
+        <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+        <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+      </div>
+      <div class="d-flex flex-column">
+        <%# <div class="form-actions"> %>
+        <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
+        <%= link_to "Log in", new_session_path(resource_name), class:"btn btn-gray" %>
+        <%# </div> %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="d-flex flex-column">
-    <%# <div class="form-actions"> %>
-      <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
-      <%= link_to "Log in", new_session_path(resource_name), class:"btn btn-gray" %>
-    <%# </div> %>
-  </div>
-<% end %>
 </div>
