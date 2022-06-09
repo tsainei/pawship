@@ -2,7 +2,7 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
   <%= f.input :name %>
-   <%= f.input :age, collection: ['1m','2m','3m','4m','5m','6m','7m','8m','9m','10m','11m','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'] %>
+   <%= f.input :age, collection: ['1m','2m','3m','4m','5m','6m','7m','8m','9m','10m','11m','1yo','2yo','3yo','4yo','5yo','6yo','7yo','8yo','9yo','10yo','11yo','12yo','13yo','14yo','15yo','16yo','17yo','18yo','19yo','20yo'] %>
   <%= f.input :gender, collection: ["male", "female", 'other']  %>
   <%= f.input :sex_orientation, collection: ['heterosexual','bisexual','homosexual'] %>
   <%= f.input :short_description, placeholder: 'ex. I am an excellent digger!(min: 50 characters)' %>
