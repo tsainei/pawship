@@ -9,16 +9,16 @@ document.addEventListener("turbo:load", () => {
   const dog_name = document.querySelector("#dog_name");
   if (document.body.dataset.demo && dog_name) {
     dog_name.addEventListener("focus", async (e) => {
-      await autofill("#dog_name", "Nai cha");
-      await autofill("#dog_age", "1m");
-      await autofill("#dog_gender", "female");
-      await autofill("#dog_sex_orientation", "heterosexual");
-      await autofill("#dog_short_description", "Es muy cute");
-      await autofill("#dog_hobbies", "Play with ball");
+      await autofill("#dog_name", "Bruce");
+      await autofill("#dog_age", "3");
+      await autofill("#dog_gender", "male");
+      await autofill("#dog_sex_orientation", "homosexual");
+      await autofill("#dog_short_description", "I am shy,but I want to make friends!");
+      await autofill("#dog_hobbies", "Snuggle my mom");
       await autofill("#dog_personality", "playful");
-      await autofill("#dog_address", "Dammweg 6 8134 Zürich");
-      await autofill("#dog_training_status", "trained");
-      await autofill("#dog_breed", "American Cocker Spaniel");
+      await autofill("#dog_address", "Dammweg 1 8134 Zürich");
+      await autofill("#dog_training_status", "training");
+      await autofill("#dog_breed", "Mixed");
 
     });
 
