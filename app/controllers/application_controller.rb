@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
 
-    if resource == current_user.dog.nil?
+    if current_user.dog.nil?
       new_dog_path
     else
       dogs_path

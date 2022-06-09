@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_one :dog
 
   def demo?
-    email&.match?(/(anita|kerry|demo)/)
+    email&.match?(/(anita|kerry|rosanna|alain|sue|demo)/)
   end
 end
