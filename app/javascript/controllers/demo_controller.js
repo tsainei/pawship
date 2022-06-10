@@ -10,7 +10,6 @@ document.addEventListener("turbo:load", () => {
   if (document.body.dataset.demo && dog_name) {
     dog_name.addEventListener("focus", async (e) => {
       await autofill("#dog_name", "Bruce");
-      await autofill("#dog_age", "3");
       await autofill("#dog_gender", "male");
       await autofill("#dog_sex_orientation", "homosexual");
       await autofill("#dog_short_description", "I am shy, but I want to make friends!");

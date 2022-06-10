@@ -31,7 +31,7 @@ puts "seeding fake dogs now"
     breed: Faker::Creature::Dog.breed,
     address: addresses.sample,
     hobbies: hobby_list.sample,
-    age: "#{rand(15)}yo",
+    age: "#{rand(1..15)}yo",
     has_breed_certificate: true,
     user: user,
     short_description: short_descriptions.sample,
